@@ -88,8 +88,8 @@ public class cef3lib : ModuleRules
         string pluginPath = Path.Combine(modulePath, "..", "..", "..");
         // Source\ThirdPaty\cef3lib\cef_94.4638\include
         // Source\ThirdPaty\cef3lib\cef_94.4638\lib\win64\language
-        CopyDir(".lng", Path.Combine(modulePath, "include", "language"), Path.Combine(pluginPath, "Intermediate"));
-        CopyDir(".lng", Path.Combine(modulePath, "lib", "win64", "language"), Path.Combine(pluginPath, "Binaries"));
+        CopyDir(".lng", Path.Combine(modulePath, CEFVersion, "include", "language"), Path.Combine(pluginPath, "Intermediate"));
+        CopyDir(".lng", Path.Combine(modulePath, CEFVersion, "lib", "win64", "language"), Path.Combine(pluginPath, "Binaries"));
     }
     void CopyDir(string subfix, string outPath, string DstRoot) {
         if (!Directory.Exists(outPath)) return;
