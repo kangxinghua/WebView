@@ -1,0 +1,181 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UWebViewWidget;
+class UObject;
+#ifdef WEBVIEW_WebViewWidget_generated_h
+#error "WebViewWidget.generated.h already included, missing '#pragma once' in WebViewWidget.h"
+#endif
+#define WEBVIEW_WebViewWidget_generated_h
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_31_DELEGATE \
+struct WebViewWidget_eventOnJsStrEvent_Parms \
+{ \
+	FString Key; \
+	FString JsonStr; \
+	FString Callback; \
+}; \
+static inline void FOnJsStrEvent_DelegateWrapper(const FMulticastScriptDelegate& OnJsStrEvent, const FString& Key, const FString& JsonStr, const FString& Callback) \
+{ \
+	WebViewWidget_eventOnJsStrEvent_Parms Parms; \
+	Parms.Key=Key; \
+	Parms.JsonStr=JsonStr; \
+	Parms.Callback=Callback; \
+	OnJsStrEvent.ProcessMulticastDelegate<UObject>(&Parms); \
+}
+
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_30_DELEGATE \
+struct WebViewWidget_eventOnBeforePopup_Parms \
+{ \
+	FString URL; \
+	FString Frame; \
+}; \
+static inline void FOnBeforePopup_DelegateWrapper(const FMulticastScriptDelegate& OnBeforePopup, const FString& URL, const FString& Frame) \
+{ \
+	WebViewWidget_eventOnBeforePopup_Parms Parms; \
+	Parms.URL=URL; \
+	Parms.Frame=Frame; \
+	OnBeforePopup.ProcessMulticastDelegate<UObject>(&Parms); \
+}
+
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_29_DELEGATE \
+struct WebViewWidget_eventOnLoadState_Parms \
+{ \
+	int32 state; \
+}; \
+static inline void FOnLoadState_DelegateWrapper(const FMulticastScriptDelegate& OnLoadState, int32 state) \
+{ \
+	WebViewWidget_eventOnLoadState_Parms Parms; \
+	Parms.state=state; \
+	OnLoadState.ProcessMulticastDelegate<UObject>(&Parms); \
+}
+
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_28_DELEGATE \
+struct WebViewWidget_eventOnUrlChanged_Parms \
+{ \
+	FText Text; \
+}; \
+static inline void FOnUrlChanged_DelegateWrapper(const FMulticastScriptDelegate& OnUrlChanged, FText const& Text) \
+{ \
+	WebViewWidget_eventOnUrlChanged_Parms Parms; \
+	Parms.Text=Text; \
+	OnUrlChanged.ProcessMulticastDelegate<UObject>(&Parms); \
+}
+
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_SPARSE_DATA
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execCallJSFunStr); \
+	DECLARE_FUNCTION(execGetUrl); \
+	DECLARE_FUNCTION(execUnbindUObject); \
+	DECLARE_FUNCTION(execBindUObject); \
+	DECLARE_FUNCTION(execCallJsonStr); \
+	DECLARE_FUNCTION(execExecuteJavascript); \
+	DECLARE_FUNCTION(execLoadURL);
+
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execCallJSFunStr); \
+	DECLARE_FUNCTION(execGetUrl); \
+	DECLARE_FUNCTION(execUnbindUObject); \
+	DECLARE_FUNCTION(execBindUObject); \
+	DECLARE_FUNCTION(execCallJsonStr); \
+	DECLARE_FUNCTION(execExecuteJavascript); \
+	DECLARE_FUNCTION(execLoadURL);
+
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUWebViewWidget(); \
+	friend struct Z_Construct_UClass_UWebViewWidget_Statics; \
+public: \
+	DECLARE_CLASS(UWebViewWidget, UWidget, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/WebView"), NO_API) \
+	DECLARE_SERIALIZER(UWebViewWidget)
+
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_INCLASS \
+private: \
+	static void StaticRegisterNativesUWebViewWidget(); \
+	friend struct Z_Construct_UClass_UWebViewWidget_Statics; \
+public: \
+	DECLARE_CLASS(UWebViewWidget, UWidget, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/WebView"), NO_API) \
+	DECLARE_SERIALIZER(UWebViewWidget)
+
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UWebViewWidget(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UWebViewWidget) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UWebViewWidget); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UWebViewWidget); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UWebViewWidget(UWebViewWidget&&); \
+	NO_API UWebViewWidget(const UWebViewWidget&); \
+public:
+
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UWebViewWidget(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UWebViewWidget(UWebViewWidget&&); \
+	NO_API UWebViewWidget(const UWebViewWidget&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UWebViewWidget); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UWebViewWidget); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UWebViewWidget)
+
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__InitialURL() { return STRUCT_OFFSET(UWebViewWidget, InitialURL); } \
+	FORCEINLINE static uint32 __PPO__BackgroundColor() { return STRUCT_OFFSET(UWebViewWidget, BackgroundColor); } \
+	FORCEINLINE static uint32 __PPO__FrameRate() { return STRUCT_OFFSET(UWebViewWidget, FrameRate); } \
+	FORCEINLINE static uint32 __PPO__JsData() { return STRUCT_OFFSET(UWebViewWidget, JsData); }
+
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_22_PROLOG
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_PRIVATE_PROPERTY_OFFSET \
+	HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_SPARSE_DATA \
+	HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_RPC_WRAPPERS \
+	HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_INCLASS \
+	HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_PRIVATE_PROPERTY_OFFSET \
+	HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_SPARSE_DATA \
+	HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+	HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_INCLASS_NO_PURE_DECLS \
+	HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h_25_ENHANCED_CONSTRUCTORS \
+static_assert(false, "Unknown access specifier for GENERATED_BODY() macro in class WebViewWidget."); \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> WEBVIEW_API UClass* StaticClass<class UWebViewWidget>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID HostProject_Plugins_WebView_Source_WebView_Public_WebViewWidget_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

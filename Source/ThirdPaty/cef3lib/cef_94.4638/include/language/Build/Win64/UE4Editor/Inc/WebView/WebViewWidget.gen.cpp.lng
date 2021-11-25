@@ -1,0 +1,910 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+#include "UObject/GeneratedCppIncludes.h"
+#include "WebView/Public/WebViewWidget.h"
+#ifdef _MSC_VER
+#pragma warning (push)
+#pragma warning (disable : 4883)
+#endif
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+void EmptyLinkFunctionForGeneratedCodeWebViewWidget() {}
+// Cross Module References
+	WEBVIEW_API UFunction* Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature();
+	WEBVIEW_API UClass* Z_Construct_UClass_UWebViewWidget();
+	WEBVIEW_API UFunction* Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature();
+	WEBVIEW_API UFunction* Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature();
+	WEBVIEW_API UFunction* Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature();
+	WEBVIEW_API UClass* Z_Construct_UClass_UWebViewWidget_NoRegister();
+	UMG_API UClass* Z_Construct_UClass_UWidget();
+	UPackage* Z_Construct_UPackage__Script_WebView();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UObject_NoRegister();
+	SLATECORE_API UScriptStruct* Z_Construct_UScriptStruct_FTextBlockStyle();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FColor();
+	WEBVIEW_API UClass* Z_Construct_UClass_UWebViewObject_NoRegister();
+// End Cross Module References
+	struct Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics
+	{
+		struct WebViewWidget_eventOnJsStrEvent_Parms
+		{
+			FString Key;
+			FString JsonStr;
+			FString Callback;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Key_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_Key;
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_JsonStr;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Callback_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_Callback;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::NewProp_Key_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::NewProp_Key = { "Key", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventOnJsStrEvent_Parms, Key), METADATA_PARAMS(Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::NewProp_Key_MetaData, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::NewProp_Key_MetaData)) };
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::NewProp_JsonStr = { "JsonStr", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventOnJsStrEvent_Parms, JsonStr), METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::NewProp_Callback_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::NewProp_Callback = { "Callback", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventOnJsStrEvent_Parms, Callback), METADATA_PARAMS(Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::NewProp_Callback_MetaData, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::NewProp_Callback_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::NewProp_Key,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::NewProp_JsonStr,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::NewProp_Callback,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UWebViewWidget, nullptr, "OnJsStrEvent__DelegateSignature", nullptr, nullptr, sizeof(WebViewWidget_eventOnJsStrEvent_Parms), Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics
+	{
+		struct WebViewWidget_eventOnBeforePopup_Parms
+		{
+			FString URL;
+			FString Frame;
+		};
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_URL;
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_Frame;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics::NewProp_URL = { "URL", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventOnBeforePopup_Parms, URL), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics::NewProp_Frame = { "Frame", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventOnBeforePopup_Parms, Frame), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics::NewProp_URL,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics::NewProp_Frame,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UWebViewWidget, nullptr, "OnBeforePopup__DelegateSignature", nullptr, nullptr, sizeof(WebViewWidget_eventOnBeforePopup_Parms), Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature_Statics
+	{
+		struct WebViewWidget_eventOnLoadState_Parms
+		{
+			int32 state;
+		};
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_state;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature_Statics::NewProp_state = { "state", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventOnLoadState_Parms, state), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature_Statics::NewProp_state,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UWebViewWidget, nullptr, "OnLoadState__DelegateSignature", nullptr, nullptr, sizeof(WebViewWidget_eventOnLoadState_Parms), Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics
+	{
+		struct WebViewWidget_eventOnUrlChanged_Parms
+		{
+			FText Text;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Text_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FTextPropertyParams NewProp_Text;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::NewProp_Text_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FTextPropertyParams Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::NewProp_Text = { "Text", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventOnUrlChanged_Parms, Text), METADATA_PARAMS(Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::NewProp_Text_MetaData, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::NewProp_Text_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::NewProp_Text,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UWebViewWidget, nullptr, "OnUrlChanged__DelegateSignature", nullptr, nullptr, sizeof(WebViewWidget_eventOnUrlChanged_Parms), Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00530000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	DEFINE_FUNCTION(UWebViewWidget::execCallJSFunStr)
+	{
+		P_GET_OBJECT(UWebViewWidget,Z_Param_Interface);
+		P_GET_PROPERTY(FStrProperty,Z_Param_CallbackName);
+		P_GET_PROPERTY(FStrProperty,Z_Param_DataStr);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		UWebViewWidget::CallJSFunStr(Z_Param_Interface,Z_Param_CallbackName,Z_Param_DataStr);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UWebViewWidget::execGetUrl)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FString*)Z_Param__Result=P_THIS->GetUrl();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UWebViewWidget::execUnbindUObject)
+	{
+		P_GET_PROPERTY(FStrProperty,Z_Param_Name);
+		P_GET_OBJECT(UObject,Z_Param_Object);
+		P_GET_UBOOL(Z_Param_bIsPermanent);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->UnbindUObject(Z_Param_Name,Z_Param_Object,Z_Param_bIsPermanent);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UWebViewWidget::execBindUObject)
+	{
+		P_GET_PROPERTY(FStrProperty,Z_Param_Name);
+		P_GET_OBJECT(UObject,Z_Param_Object);
+		P_GET_UBOOL(Z_Param_bIsPermanent);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->BindUObject(Z_Param_Name,Z_Param_Object,Z_Param_bIsPermanent);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UWebViewWidget::execCallJsonStr)
+	{
+		P_GET_PROPERTY(FStrProperty,Z_Param_Function);
+		P_GET_PROPERTY(FStrProperty,Z_Param_Data);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->CallJsonStr(Z_Param_Function,Z_Param_Data);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UWebViewWidget::execExecuteJavascript)
+	{
+		P_GET_PROPERTY(FStrProperty,Z_Param_ScriptText);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ExecuteJavascript(Z_Param_ScriptText);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UWebViewWidget::execLoadURL)
+	{
+		P_GET_PROPERTY(FStrProperty,Z_Param_NewURL);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->LoadURL(Z_Param_NewURL);
+		P_NATIVE_END;
+	}
+	void UWebViewWidget::StaticRegisterNativesUWebViewWidget()
+	{
+		UClass* Class = UWebViewWidget::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "BindUObject", &UWebViewWidget::execBindUObject },
+			{ "CallJSFunStr", &UWebViewWidget::execCallJSFunStr },
+			{ "CallJsonStr", &UWebViewWidget::execCallJsonStr },
+			{ "ExecuteJavascript", &UWebViewWidget::execExecuteJavascript },
+			{ "GetUrl", &UWebViewWidget::execGetUrl },
+			{ "LoadURL", &UWebViewWidget::execLoadURL },
+			{ "UnbindUObject", &UWebViewWidget::execUnbindUObject },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics
+	{
+		struct WebViewWidget_eventBindUObject_Parms
+		{
+			FString Name;
+			UObject* Object;
+			bool bIsPermanent;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Name_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_Name;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Object;
+		static void NewProp_bIsPermanent_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bIsPermanent;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::NewProp_Name_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::NewProp_Name = { "Name", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventBindUObject_Parms, Name), METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::NewProp_Name_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::NewProp_Name_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::NewProp_Object = { "Object", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventBindUObject_Parms, Object), Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::NewProp_bIsPermanent_SetBit(void* Obj)
+	{
+		((WebViewWidget_eventBindUObject_Parms*)Obj)->bIsPermanent = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::NewProp_bIsPermanent = { "bIsPermanent", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(WebViewWidget_eventBindUObject_Parms), &Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::NewProp_bIsPermanent_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::NewProp_Name,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::NewProp_Object,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::NewProp_bIsPermanent,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::Function_MetaDataParams[] = {
+		{ "AdvancedDisplay", "Name|Object" },
+		{ "Category", "Web View" },
+		{ "Comment", "/**\n\x09 * Expose a UObject instance to the browser runtime.\n\x09 * Properties and Functions will be accessible from JavaScript side.\n\x09 * As all communication with the rendering procesis asynchronous, return values (both for properties and function results) are wrapped into JS Future objects.\n\x09 *\n\x09 * @param Name The name of the object. The object will show up as window.ue4.{Name} on the javascript side. If there is an existing object of the same name, this object will replace it. If bIsPermanent is false and there is an existing permanent binding, the permanent binding will be restored when the temporary one is removed.\n\x09 * @param Object The object instance.\n\x09 * @param bIsPermanent If true, the object will be visible to all pages loaded through this browser widget, otherwise, it will be deleted when navigating away from the current page. Non-permanent bindings should be registered from inside an OnLoadStarted event handler in order to be available before JS code starts loading.\n\x09 */" },
+		{ "CPP_Default_bIsPermanent", "true" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "Expose a UObject instance to the browser runtime.\nProperties and Functions will be accessible from JavaScript side.\nAs all communication with the rendering procesis asynchronous, return values (both for properties and function results) are wrapped into JS Future objects.\n\n@param Name The name of the object. The object will show up as window.ue4.{Name} on the javascript side. If there is an existing object of the same name, this object will replace it. If bIsPermanent is false and there is an existing permanent binding, the permanent binding will be restored when the temporary one is removed.\n@param Object The object instance.\n@param bIsPermanent If true, the object will be visible to all pages loaded through this browser widget, otherwise, it will be deleted when navigating away from the current page. Non-permanent bindings should be registered from inside an OnLoadStarted event handler in order to be available before JS code starts loading." },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UWebViewWidget, nullptr, "BindUObject", nullptr, nullptr, sizeof(WebViewWidget_eventBindUObject_Parms), Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UWebViewWidget_BindUObject()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UWebViewWidget_BindUObject_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics
+	{
+		struct WebViewWidget_eventCallJSFunStr_Parms
+		{
+			UWebViewWidget* Interface;
+			FString CallbackName;
+			FString DataStr;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Interface_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Interface;
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_CallbackName;
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_DataStr;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::NewProp_Interface_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::NewProp_Interface = { "Interface", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventCallJSFunStr_Parms, Interface), Z_Construct_UClass_UWebViewWidget_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::NewProp_Interface_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::NewProp_Interface_MetaData)) };
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::NewProp_CallbackName = { "CallbackName", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventCallJSFunStr_Parms, CallbackName), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::NewProp_DataStr = { "DataStr", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventCallJSFunStr_Parms, DataStr), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::NewProp_Interface,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::NewProp_CallbackName,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::NewProp_DataStr,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Web View" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UWebViewWidget, nullptr, "CallJSFunStr", nullptr, nullptr, sizeof(WebViewWidget_eventCallJSFunStr_Parms), Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UWebViewWidget_CallJSFunStr()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UWebViewWidget_CallJSFunStr_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics
+	{
+		struct WebViewWidget_eventCallJsonStr_Parms
+		{
+			FString Function;
+			FString Data;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Function_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_Function;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Data_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_Data;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::NewProp_Function_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::NewProp_Function = { "Function", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventCallJsonStr_Parms, Function), METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::NewProp_Function_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::NewProp_Function_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::NewProp_Data_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::NewProp_Data = { "Data", nullptr, (EPropertyFlags)0x0010040000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventCallJsonStr_Parms, Data), METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::NewProp_Data_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::NewProp_Data_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::NewProp_Function,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::NewProp_Data,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::Function_MetaDataParams[] = {
+		{ "AdvancedDisplay", "Data" },
+		{ "AutoCreateRefTerm", "Data" },
+		{ "Category", "Web View" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UWebViewWidget, nullptr, "CallJsonStr", nullptr, nullptr, sizeof(WebViewWidget_eventCallJsonStr_Parms), Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UWebViewWidget_CallJsonStr()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UWebViewWidget_CallJsonStr_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics
+	{
+		struct WebViewWidget_eventExecuteJavascript_Parms
+		{
+			FString ScriptText;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ScriptText_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_ScriptText;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::NewProp_ScriptText_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::NewProp_ScriptText = { "ScriptText", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventExecuteJavascript_Parms, ScriptText), METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::NewProp_ScriptText_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::NewProp_ScriptText_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::NewProp_ScriptText,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Web View" },
+		{ "Comment", "/**\n\x09* Executes a JavaScript string in the context of the web page\n\x09*\n\x09* @param ScriptText JavaScript string to execute\n\x09*/" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "Executes a JavaScript string in the context of the web page\n\n@param ScriptText JavaScript string to execute" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UWebViewWidget, nullptr, "ExecuteJavascript", nullptr, nullptr, sizeof(WebViewWidget_eventExecuteJavascript_Parms), Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UWebViewWidget_GetUrl_Statics
+	{
+		struct WebViewWidget_eventGetUrl_Parms
+		{
+			FString ReturnValue;
+		};
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UWebViewWidget_GetUrl_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventGetUrl_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UWebViewWidget_GetUrl_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_GetUrl_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_GetUrl_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Web View" },
+		{ "Comment", "/**\n\x09* Gets the currently loaded URL.\n\x09*\n\x09* @return The URL, or empty string if no document is loaded.\n\x09*/" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "Gets the currently loaded URL.\n\n@return The URL, or empty string if no document is loaded." },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UWebViewWidget_GetUrl_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UWebViewWidget, nullptr, "GetUrl", nullptr, nullptr, sizeof(WebViewWidget_eventGetUrl_Parms), Z_Construct_UFunction_UWebViewWidget_GetUrl_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_GetUrl_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_GetUrl_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_GetUrl_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UWebViewWidget_GetUrl()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UWebViewWidget_GetUrl_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UWebViewWidget_LoadURL_Statics
+	{
+		struct WebViewWidget_eventLoadURL_Parms
+		{
+			FString NewURL;
+		};
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_NewURL;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UWebViewWidget_LoadURL_Statics::NewProp_NewURL = { "NewURL", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventLoadURL_Parms, NewURL), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UWebViewWidget_LoadURL_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_LoadURL_Statics::NewProp_NewURL,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_LoadURL_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Web View" },
+		{ "Comment", "/**\n\x09 * Load the specified URL\n\x09 *\n\x09 * @param NewURL New URL to load\n\x09 */" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "Load the specified URL\n\n@param NewURL New URL to load" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UWebViewWidget_LoadURL_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UWebViewWidget, nullptr, "LoadURL", nullptr, nullptr, sizeof(WebViewWidget_eventLoadURL_Parms), Z_Construct_UFunction_UWebViewWidget_LoadURL_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_LoadURL_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_LoadURL_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_LoadURL_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UWebViewWidget_LoadURL()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UWebViewWidget_LoadURL_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics
+	{
+		struct WebViewWidget_eventUnbindUObject_Parms
+		{
+			FString Name;
+			UObject* Object;
+			bool bIsPermanent;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Name_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_Name;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Object;
+		static void NewProp_bIsPermanent_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bIsPermanent;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::NewProp_Name_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::NewProp_Name = { "Name", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventUnbindUObject_Parms, Name), METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::NewProp_Name_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::NewProp_Name_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::NewProp_Object = { "Object", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(WebViewWidget_eventUnbindUObject_Parms, Object), Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::NewProp_bIsPermanent_SetBit(void* Obj)
+	{
+		((WebViewWidget_eventUnbindUObject_Parms*)Obj)->bIsPermanent = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::NewProp_bIsPermanent = { "bIsPermanent", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(WebViewWidget_eventUnbindUObject_Parms), &Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::NewProp_bIsPermanent_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::NewProp_Name,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::NewProp_Object,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::NewProp_bIsPermanent,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::Function_MetaDataParams[] = {
+		{ "AdvancedDisplay", "Name|Object" },
+		{ "Category", "Web View" },
+		{ "Comment", "/**\n\x09 * Remove an existing script binding registered by BindUObject.\n\x09 *\n\x09 * @param Name The name of the object to remove.\n\x09 * @param Object The object will only be removed if it is the same object as the one passed in.\n\x09 * @param bIsPermanent Must match the bIsPermanent argument passed to BindUObject.\n\x09 */" },
+		{ "CPP_Default_bIsPermanent", "true" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "Remove an existing script binding registered by BindUObject.\n\n@param Name The name of the object to remove.\n@param Object The object will only be removed if it is the same object as the one passed in.\n@param bIsPermanent Must match the bIsPermanent argument passed to BindUObject." },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UWebViewWidget, nullptr, "UnbindUObject", nullptr, nullptr, sizeof(WebViewWidget_eventUnbindUObject_Parms), Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UWebViewWidget_UnbindUObject()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UWebViewWidget_UnbindUObject_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_UWebViewWidget_NoRegister()
+	{
+		return UWebViewWidget::StaticClass();
+	}
+	struct Z_Construct_UClass_UWebViewWidget_Statics
+	{
+		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
+#endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnUrlChanged_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnUrlChanged;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnBeforePopup_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnBeforePopup;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnLoadState_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnLoadState;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bEnableMouseTransparency_MetaData[];
+#endif
+		static void NewProp_bEnableMouseTransparency_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bEnableMouseTransparency;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TextStyle_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_TextStyle;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ShowControls_MetaData[];
+#endif
+		static void NewProp_ShowControls_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ShowControls;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RightKeyPopup_MetaData[];
+#endif
+		static void NewProp_RightKeyPopup_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_RightKeyPopup;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ShowAddressBar_MetaData[];
+#endif
+		static void NewProp_ShowAddressBar_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ShowAddressBar;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SwitchInputMethod_MetaData[];
+#endif
+		static void NewProp_SwitchInputMethod_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_SwitchInputMethod;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnJsEventStr_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnJsEventStr;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_InitialURL_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_InitialURL;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BackgroundColor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_BackgroundColor;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FrameRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_FrameRate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_JsData_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_JsData;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
+		static const UE4CodeGen_Private::FClassParams ClassParams;
+	};
+	UObject* (*const Z_Construct_UClass_UWebViewWidget_Statics::DependentSingletons[])() = {
+		(UObject* (*)())Z_Construct_UClass_UWidget,
+		(UObject* (*)())Z_Construct_UPackage__Script_WebView,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_UWebViewWidget_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UWebViewWidget_BindUObject, "BindUObject" }, // 277337110
+		{ &Z_Construct_UFunction_UWebViewWidget_CallJSFunStr, "CallJSFunStr" }, // 3535359823
+		{ &Z_Construct_UFunction_UWebViewWidget_CallJsonStr, "CallJsonStr" }, // 3799685034
+		{ &Z_Construct_UFunction_UWebViewWidget_ExecuteJavascript, "ExecuteJavascript" }, // 2666449034
+		{ &Z_Construct_UFunction_UWebViewWidget_GetUrl, "GetUrl" }, // 3269105596
+		{ &Z_Construct_UFunction_UWebViewWidget_LoadURL, "LoadURL" }, // 4215410070
+		{ &Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature, "OnBeforePopup__DelegateSignature" }, // 2660121611
+		{ &Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature, "OnJsStrEvent__DelegateSignature" }, // 4181116623
+		{ &Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature, "OnLoadState__DelegateSignature" }, // 1302589517
+		{ &Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature, "OnUrlChanged__DelegateSignature" }, // 91805845
+		{ &Z_Construct_UFunction_UWebViewWidget_UnbindUObject, "UnbindUObject" }, // 2846910094
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::Class_MetaDataParams[] = {
+		{ "Comment", "/**\n * \n */" },
+		{ "IncludePath", "WebViewWidget.h" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+	};
+#endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnUrlChanged_MetaData[] = {
+		{ "Category", "Web View|Event" },
+		{ "Comment", "/** Called when the Url changes. */" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "Called when the Url changes." },
+	};
+#endif
+	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnUrlChanged = { "OnUrlChanged", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UWebViewWidget, OnUrlChanged), Z_Construct_UDelegateFunction_UWebViewWidget_OnUrlChanged__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnUrlChanged_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnUrlChanged_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnBeforePopup_MetaData[] = {
+		{ "Category", "Web View|Event" },
+		{ "Comment", "/** Called when a popup is about to spawn. */" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "Called when a popup is about to spawn." },
+	};
+#endif
+	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnBeforePopup = { "OnBeforePopup", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UWebViewWidget, OnBeforePopup), Z_Construct_UDelegateFunction_UWebViewWidget_OnBeforePopup__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnBeforePopup_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnBeforePopup_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnLoadState_MetaData[] = {
+		{ "Category", "Web View|Event" },
+		{ "Comment", "/** Called when a popup is about to spawn. */" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "Called when a popup is about to spawn." },
+	};
+#endif
+	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnLoadState = { "OnLoadState", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UWebViewWidget, OnLoadState), Z_Construct_UDelegateFunction_UWebViewWidget_OnLoadState__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnLoadState_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnLoadState_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_bEnableMouseTransparency_MetaData[] = {
+		{ "Category", "Web View|Mouse" },
+		{ "DisplayName", "Enable Transparency" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+	};
+#endif
+	void Z_Construct_UClass_UWebViewWidget_Statics::NewProp_bEnableMouseTransparency_SetBit(void* Obj)
+	{
+		((UWebViewWidget*)Obj)->bEnableMouseTransparency = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_bEnableMouseTransparency = { "bEnableMouseTransparency", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UWebViewWidget), &Z_Construct_UClass_UWebViewWidget_Statics::NewProp_bEnableMouseTransparency_SetBit, METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_bEnableMouseTransparency_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_bEnableMouseTransparency_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_TextStyle_MetaData[] = {
+		{ "Category", "Web View|Show Head" },
+		{ "Comment", "//UPROPERTY(EditAnywhere, meta = (DisplayName = \"Transparency Threshold\", UIMin = 0, UIMax = 1), Category = \"Web View|Mouse\")\n//float MouseTransparencyThreshold=0.333f;\n" },
+		{ "DisplayName", "Text Style" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "UPROPERTY(EditAnywhere, meta = (DisplayName = \"Transparency Threshold\", UIMin = 0, UIMax = 1), Category = \"Web View|Mouse\")\nfloat MouseTransparencyThreshold=0.333f;" },
+		{ "UIMax", "1" },
+		{ "UIMin", "0" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_TextStyle = { "TextStyle", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UWebViewWidget, TextStyle), Z_Construct_UScriptStruct_FTextBlockStyle, METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_TextStyle_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_TextStyle_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowControls_MetaData[] = {
+		{ "Category", "Web View|Show Head" },
+		{ "Comment", "/** Whether to show standard controls like Back, Forward, Reload etc. */" },
+		{ "DisplayName", "Show Controls" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "Whether to show standard controls like Back, Forward, Reload etc." },
+		{ "UIMax", "1" },
+		{ "UIMin", "0" },
+	};
+#endif
+	void Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowControls_SetBit(void* Obj)
+	{
+		((UWebViewWidget*)Obj)->ShowControls = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowControls = { "ShowControls", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UWebViewWidget), &Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowControls_SetBit, METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowControls_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowControls_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_RightKeyPopup_MetaData[] = {
+		{ "Category", "Web View|Show Head" },
+		{ "DisplayName", "Show Popup Menu" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "UIMax", "1" },
+		{ "UIMin", "0" },
+	};
+#endif
+	void Z_Construct_UClass_UWebViewWidget_Statics::NewProp_RightKeyPopup_SetBit(void* Obj)
+	{
+		((UWebViewWidget*)Obj)->RightKeyPopup = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_RightKeyPopup = { "RightKeyPopup", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UWebViewWidget), &Z_Construct_UClass_UWebViewWidget_Statics::NewProp_RightKeyPopup_SetBit, METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_RightKeyPopup_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_RightKeyPopup_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowAddressBar_MetaData[] = {
+		{ "Category", "Web View|Show Head" },
+		{ "Comment", "/** Whether to show an address bar. */" },
+		{ "DisplayName", "Show Address Bar" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "Whether to show an address bar." },
+		{ "UIMax", "1" },
+		{ "UIMin", "0" },
+	};
+#endif
+	void Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowAddressBar_SetBit(void* Obj)
+	{
+		((UWebViewWidget*)Obj)->ShowAddressBar = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowAddressBar = { "ShowAddressBar", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UWebViewWidget), &Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowAddressBar_SetBit, METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowAddressBar_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowAddressBar_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_SwitchInputMethod_MetaData[] = {
+		{ "Category", "Web View|Show Head" },
+		{ "Comment", "/** Whether to show an address bar. */" },
+		{ "DisplayName", "Switch Input Method" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "Whether to show an address bar." },
+		{ "UIMax", "1" },
+		{ "UIMin", "0" },
+	};
+#endif
+	void Z_Construct_UClass_UWebViewWidget_Statics::NewProp_SwitchInputMethod_SetBit(void* Obj)
+	{
+		((UWebViewWidget*)Obj)->SwitchInputMethod = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_SwitchInputMethod = { "SwitchInputMethod", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UWebViewWidget), &Z_Construct_UClass_UWebViewWidget_Statics::NewProp_SwitchInputMethod_SetBit, METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_SwitchInputMethod_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_SwitchInputMethod_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnJsEventStr_MetaData[] = {
+		{ "Category", "Web View|Events" },
+		{ "Comment", "// Called with ue.interface.broadcast(name, data) in the browser context.\n" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "Called with ue.interface.broadcast(name, data) in the browser context." },
+	};
+#endif
+	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnJsEventStr = { "OnJsEventStr", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UWebViewWidget, OnJsEventStr), Z_Construct_UDelegateFunction_UWebViewWidget_OnJsStrEvent__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnJsEventStr_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnJsEventStr_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_InitialURL_MetaData[] = {
+		{ "Category", "Web View" },
+		{ "Comment", "/** URL that the browser will initially navigate to. The URL should include the protocol, eg http:// */" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+		{ "ToolTip", "URL that the browser will initially navigate to. The URL should include the protocol, eg http://" },
+	};
+#endif
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_InitialURL = { "InitialURL", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UWebViewWidget, InitialURL), METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_InitialURL_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_InitialURL_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_BackgroundColor_MetaData[] = {
+		{ "Category", "Web View" },
+		{ "DisplayName", "Background Color" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_BackgroundColor = { "BackgroundColor", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UWebViewWidget, BackgroundColor), Z_Construct_UScriptStruct_FColor, METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_BackgroundColor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_BackgroundColor_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_FrameRate_MetaData[] = {
+		{ "Category", "Web View" },
+		{ "ClampMax", "60" },
+		{ "ClampMin", "30" },
+		{ "DisplayName", "Frame Rate" },
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_FrameRate = { "FrameRate", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UWebViewWidget, FrameRate), METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_FrameRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_FrameRate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UWebViewWidget_Statics::NewProp_JsData_MetaData[] = {
+		{ "ModuleRelativePath", "Public/WebViewWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UWebViewWidget_Statics::NewProp_JsData = { "JsData", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UWebViewWidget, JsData), Z_Construct_UClass_UWebViewObject_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_JsData_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::NewProp_JsData_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UWebViewWidget_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnUrlChanged,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnBeforePopup,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnLoadState,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_bEnableMouseTransparency,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_TextStyle,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowControls,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_RightKeyPopup,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_ShowAddressBar,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_SwitchInputMethod,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_OnJsEventStr,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_InitialURL,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_BackgroundColor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_FrameRate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UWebViewWidget_Statics::NewProp_JsData,
+	};
+	const FCppClassTypeInfoStatic Z_Construct_UClass_UWebViewWidget_Statics::StaticCppClassTypeInfo = {
+		TCppClassTypeTraits<UWebViewWidget>::IsAbstract,
+	};
+	const UE4CodeGen_Private::FClassParams Z_Construct_UClass_UWebViewWidget_Statics::ClassParams = {
+		&UWebViewWidget::StaticClass,
+		nullptr,
+		&StaticCppClassTypeInfo,
+		DependentSingletons,
+		FuncInfo,
+		Z_Construct_UClass_UWebViewWidget_Statics::PropPointers,
+		nullptr,
+		UE_ARRAY_COUNT(DependentSingletons),
+		UE_ARRAY_COUNT(FuncInfo),
+		UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::PropPointers),
+		0,
+		0x00B000A0u,
+		METADATA_PARAMS(Z_Construct_UClass_UWebViewWidget_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_UWebViewWidget_Statics::Class_MetaDataParams))
+	};
+	UClass* Z_Construct_UClass_UWebViewWidget()
+	{
+		static UClass* OuterClass = nullptr;
+		if (!OuterClass)
+		{
+			UE4CodeGen_Private::ConstructUClass(OuterClass, Z_Construct_UClass_UWebViewWidget_Statics::ClassParams);
+		}
+		return OuterClass;
+	}
+	IMPLEMENT_CLASS(UWebViewWidget, 1131672323);
+	template<> WEBVIEW_API UClass* StaticClass<UWebViewWidget>()
+	{
+		return UWebViewWidget::StaticClass();
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UWebViewWidget(Z_Construct_UClass_UWebViewWidget, &UWebViewWidget::StaticClass, TEXT("/Script/WebView"), TEXT("UWebViewWidget"), false, nullptr, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(UWebViewWidget);
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+#ifdef _MSC_VER
+#pragma warning (pop)
+#endif
