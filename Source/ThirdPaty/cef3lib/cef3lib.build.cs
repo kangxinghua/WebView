@@ -96,10 +96,10 @@ public class cef3lib : ModuleRules
         foreach (string FileName in Directory.EnumerateFiles(outPath, "*"+subfix, SearchOption.AllDirectories))
         {
             string newFile = FileName.Replace(outPath, DstRoot);
-            if (File.Exists(newFile)) continue;
             string file = Path.GetFileName(newFile).Replace(subfix,"");
             string pathDst = Path.GetDirectoryName(newFile);
             newFile = Path.Combine(pathDst, file);
+            if (File.Exists(newFile)) continue;
             if (!Directory.Exists(pathDst)){
                 Directory.CreateDirectory(pathDst);
             }
