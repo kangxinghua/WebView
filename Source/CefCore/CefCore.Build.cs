@@ -12,8 +12,11 @@ public class CefCore : ModuleRules
 		bUsePrecompiled = !bPrecompile;
 		PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Public"));
 		string privatep = Path.Combine(ModuleDirectory, "Private");
-		if (Directory.Exists(privatep))
+		if (Directory.Exists(privatep)) {
 			PrivateIncludePaths.Add(privatep);
+			PublicDefinitions.Add("CRYPTOPP_ENABLE_NAMESPACE_WEAK=1"); //
+		}
+			
 		PublicIncludePaths.AddRange(
 			new string[] {
 				// ... add public include paths required here ...
@@ -47,7 +50,6 @@ public class CefCore : ModuleRules
 				"Slate",
 				"SlateCore",
 				"cef3lib",
-				"cryptopplib",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
