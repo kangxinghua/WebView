@@ -83,6 +83,10 @@ public class cef3lib : ModuleRules
             RuntimeDependencies.Add(FileName);
         }
         RuntimeDependencies.Add(Path.Combine(LibraryPath, renderName));
+        string webviewLic = Path.Combine(LibraryPath, "webview.dat");
+        if (File.Exists(webviewLic)) {// 如果存在则放入license
+            RuntimeDependencies.Add(webviewLic);
+        }
         // Restore backup
         string modulePath = ModuleDirectory;
         string pluginPath = Path.Combine(modulePath, "..", "..", "..");
