@@ -17,12 +17,12 @@ class WEBVIEW_API UWebViewObject : public UObject
 {
 	GENERATED_BODY()
 public:
-	UFUNCTION(BlueprintCallable, Category = "Cef Web")
-	void dispatchUE4Event(const FString& Name, const FString& Data, const FString& Callback);
+	UFUNCTION(BlueprintCallable, Category = "Web View")
+	void SyncCallUe(const FString& Name, const FString& Data, const FString& Callback);
 
-	void SetWidget(UWebViewWidget* InWidget);
+	void SetUMG(UWebViewWidget* InWidget);
 private:
-	TWeakObjectPtr<UWebViewWidget> Widget;
+	TWeakObjectPtr<UWebViewWidget> UMG;
 };
 
 

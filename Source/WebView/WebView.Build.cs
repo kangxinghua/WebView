@@ -18,7 +18,7 @@ namespace UnrealBuildTool.Rules
                     "SlateCore",
                     "UMG",
                     "Engine",
-                    "CefCore"
+                    "CefBrowser"
                 }
             );
 
