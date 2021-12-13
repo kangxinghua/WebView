@@ -15,7 +15,7 @@
 	"Installed": true,
 	"Modules": [
 		{
-			"Name": "CefCore",
+			"Name": "CefBrowser",
 			"Type": "Runtime",
 			"LoadingPhase": "PreDefault",
 			"WhitelistPlatforms": [
