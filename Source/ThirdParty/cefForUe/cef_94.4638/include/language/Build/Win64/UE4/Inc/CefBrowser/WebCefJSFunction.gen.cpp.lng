@@ -40,7 +40,7 @@ static struct FScriptStruct_CefBrowser_StaticRegisterNativesFWebCefJSResponse
 {
 	FScriptStruct_CefBrowser_StaticRegisterNativesFWebCefJSResponse()
 	{
-		UScriptStruct::DeferCppStructOps(FName(TEXT("WebCefJSResponse")),new UScriptStruct::TCppStructOps<FWebCefJSResponse>);
+		UScriptStruct::DeferCppStructOps<FWebCefJSResponse>(FName(TEXT("WebCefJSResponse")));
 	}
 } ScriptStruct_CefBrowser_StaticRegisterNativesFWebCefJSResponse;
 	struct Z_Construct_UScriptStruct_FWebCefJSResponse_Statics
@@ -113,7 +113,7 @@ static struct FScriptStruct_CefBrowser_StaticRegisterNativesFWebCefJSFunction
 {
 	FScriptStruct_CefBrowser_StaticRegisterNativesFWebCefJSFunction()
 	{
-		UScriptStruct::DeferCppStructOps(FName(TEXT("WebCefJSFunction")),new UScriptStruct::TCppStructOps<FWebCefJSFunction>);
+		UScriptStruct::DeferCppStructOps<FWebCefJSFunction>(FName(TEXT("WebCefJSFunction")));
 	}
 } ScriptStruct_CefBrowser_StaticRegisterNativesFWebCefJSFunction;
 	struct Z_Construct_UScriptStruct_FWebCefJSFunction_Statics
@@ -183,7 +183,7 @@ static struct FScriptStruct_CefBrowser_StaticRegisterNativesFWebCefJSCallbackBas
 {
 	FScriptStruct_CefBrowser_StaticRegisterNativesFWebCefJSCallbackBase()
 	{
-		UScriptStruct::DeferCppStructOps(FName(TEXT("WebCefJSCallbackBase")),new UScriptStruct::TCppStructOps<FWebCefJSCallbackBase>);
+		UScriptStruct::DeferCppStructOps<FWebCefJSCallbackBase>(FName(TEXT("WebCefJSCallbackBase")));
 	}
 } ScriptStruct_CefBrowser_StaticRegisterNativesFWebCefJSCallbackBase;
 	struct Z_Construct_UScriptStruct_FWebCefJSCallbackBase_Statics

@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeCefBrowser_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x25BA3010,
+				0x2390E75D,
 				0x7910A08C,
 				METADATA_PARAMS(nullptr, 0)
 			};
