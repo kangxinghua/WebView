@@ -1,6 +1,7 @@
 // Copyright aSurgingRiver, Inc. All Rights Reserved.
 #include "WebViewWidget.h"
-#include "SCefCore.h"
+#include "SCefBrowser.h"
+#include "Async/Async.h"
 #include "WebViewObject.h"
 #include "Widgets/Layout/SBox.h"
 #include "Widgets/Text/STextBlock.h"
@@ -26,97 +27,91 @@
 
 UWebViewWidget::UWebViewWidget(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
-	, TextStyle(FTextBlockStyle::GetDefault())
-	, BackgroundColor(255,255,255,255)
+	, styleText(FTextBlockStyle::GetDefault())
+	, ColorBackground(255, 255, 255, 255)
+	, jsWindow(TEXT("ue"))
 {
+	GConfig->GetString(TEXT("WebView"), TEXT("window"), jsWindow, GGameIni);
+	styleText.ColorAndOpacity = FSlateColor(FLinearColor(0.0f, 0.0f, 0.0f));
+	styleText.Font.Size = 20;
 	bIsVariable = true;
-	TextStyle.Font.Size = 20;
-	TextStyle.ColorAndOpacity = FSlateColor(FLinearColor(0.0f, 0.0f, 0.0f));
-	windowJS = TEXT("ue");
-	GConfig->GetString(TEXT("WebView"), TEXT("window"), windowJS, GGameIni);
 }
 
 void UWebViewWidget::LoadURL(FString NewURL)
 {
-	if ( WebCoreWidget.IsValid() )
-	{
-		return WebCoreWidget->LoadURL(NewURL);
-	}
+	if (!CefCoreWidget.IsValid())return;
+	return CefCoreWidget->LoadURL(NewURL);
 }
 
 void UWebViewWidget::ExecuteJavascript(const FString& ScriptText)
 {
-	if (WebCoreWidget.IsValid())
-	{
-		return WebCoreWidget->ExecuteJavascript(ScriptText);
-	}
+	if (!CefCoreWidget.IsValid())return;
+	return CefCoreWidget->ExecuteJavascript(ScriptText);
 }
 
 void UWebViewWidget::CallJsonStr(const FString& Function, const FString& Data) 
 {
-	if (!WebCoreWidget.IsValid() || Function.IsEmpty() || Function == TEXT("dispatchue4event"))
+	if (!CefCoreWidget.IsValid() || Function.IsEmpty() || Function == TEXT("synccallue"))
 		return;
-	FString ScriptText;
+	FString TextScript;
 	if (Data.Len()>=2) {
-		ScriptText = FString::Printf(TEXT("%s.interface['%s'](%s)"),
-			*windowJS,
-			*Function,
-			*Data);
+		TextScript = FString::Printf(TEXT("%s.interface['%s'](%s)"),
+			*jsWindow, *Function, *Data);
 	}
 	else {
-		ScriptText = FString::Printf(TEXT("%s.interface['%s']()"),
-			*windowJS,
-			*Function);
+		TextScript = FString::Printf(TEXT("%s.interface['%s']()"),
+			*jsWindow,*Function);
 	}
-	WebCoreWidget->ExecuteJavascript(ScriptText);
+	CefCoreWidget->ExecuteJavascript(TextScript);
 
-}
-
-void UWebViewWidget::BindUObject(const FString& Name, UObject* Object, bool bIsPermanent) {
-	if (WebCoreWidget.IsValid()){
-		WebCoreWidget->BindUObject(Name, Object, bIsPermanent);
-	}
-}
-
-void UWebViewWidget::UnbindUObject(const FString& Name, UObject* Object, bool bIsPermanent){
-	if (WebCoreWidget.IsValid()) {
-		WebCoreWidget->UnbindUObject(Name, Object, bIsPermanent);
-	}
 }
 
 FString UWebViewWidget::GetUrl() const {
-	if (WebCoreWidget.IsValid())	{
-		return WebCoreWidget->GetUrl();
-	}
-	return FString();
+	if (!CefCoreWidget.IsValid())return FString();
+	return CefCoreWidget->GetUrl();
+}
+
+void UWebViewWidget::BindUObject(const FString& VarName, UObject* Object, bool bIsPermanent) {
+	if (!CefCoreWidget.IsValid())return;
+	CefCoreWidget->BindUObject(VarName, Object, bIsPermanent);
+}
+
+void UWebViewWidget::UnbindUObject(const FString& Name, UObject* Object, bool bIsPermanent){
+	if (!CefCoreWidget.IsValid())return; 
+	CefCoreWidget->UnbindUObject(Name, Object, bIsPermanent);
 }
 
 void UWebViewWidget::ReleaseSlateResources(bool bReleaseChildren){
-	WebCoreWidget.Reset();
+	CefCoreWidget.Reset();
 	Super::ReleaseSlateResources(bReleaseChildren);
 }
 
 TSharedRef<SWidget> UWebViewWidget::RebuildWidget(){
-	WebCoreWidget = SNew(SCefCore)
-		.InitialURL(InitialURL)
-		.ShowControls(ShowControls)
-		.ShowAddressBar(ShowAddressBar)
-		.BackgroundColor(BackgroundColor)
-		.EnableMouseTransparency(bEnableMouseTransparency)
-		.BrowserFrameRate(FrameRate)
+	CefCoreWidget = SNew(SCefBrowser)
+		.ShowAddressBar(addressShow)
+		.InitialURL(urlInitial)
+		.BackgroundColor(ColorBackground)
+		.ShowControls(controlShow)
 		.RightKeyPopup(RightKeyPopup)
-		.TextStyle(TextStyle)
-		.ViewportSize(GetDesiredSize())
+		.BrowserFrameRate(RateFrame)
+		.TextStyle(styleText)
+		.EnableMouseTransparency(bEnableTransparency)
 		.SwitchInputMethod(SwitchInputMethod)
-		.OnLoadState_UObject(this, &UWebViewWidget::HandleOnLoadState)
+		.ViewportSize(GetDesiredSize())
 		.OnUrlChanged_UObject(this, &UWebViewWidget::HandleOnUrlChanged)
-		.OnBeforePopup_UObject(this, &UWebViewWidget::HandleOnBeforePopup);
-	JsData = NewObject<UWebViewObject>();// 隔离JS和UE4之间的数据。
-	if (JsData) {
-		BindUObject("interface", JsData);
-		JsData->SetWidget(this);
+		.OnBeforePopup_UObject(this, &UWebViewWidget::HandleOnBeforePopup)
+		.OnLoadState_UObject(this, &UWebViewWidget::HandleOnLoadState);
+	_ViewObject = NewObject<UWebViewObject>();// 隔离JS和UE4之间的数据。
+	if (_ViewObject) {
+		BindUObject("interface", _ViewObject);
+		_ViewObject->SetUMG(this);
 	}
-	return WebCoreWidget.ToSharedRef();
+	return CefCoreWidget.ToSharedRef();
+}
+
+inline void UWebViewWidget::CallBrowser(TFunction<void(TSharedPtr<class SCefBrowser>&)>& fun) {
+	if (!CefCoreWidget.IsValid())return;
+	fun(CefCoreWidget);
 }
 
 void UWebViewWidget::HandleOnUrlChanged(const FText& InText) {
@@ -135,11 +130,10 @@ bool UWebViewWidget::HandleOnBeforePopup(FString URL, FString Frame) {
 	}
 	// Retry on the GameThread.
 	TWeakObjectPtr<UWebViewWidget> WeakThis = this;
-	FFunctionGraphTask::CreateAndDispatchWhenReady([WeakThis, URL, Frame]() {
-		if (WeakThis.IsValid()) {
-			WeakThis->HandleOnBeforePopup(URL, Frame);
-		}
-	}, TStatId(), nullptr, ENamedThreads::GameThread);
+	AsyncTask(ENamedThreads::GameThread, [WeakThis, URL, Frame]() {
+		if (!WeakThis.IsValid()) return;
+		WeakThis->HandleOnBeforePopup(URL, Frame);
+		});
 	return true;
 
 }
@@ -150,14 +144,14 @@ const FText UWebViewWidget::GetPaletteCategory(){
 }
 #endif
 
-FString UWebViewWidget::WindowJS() {
-	return windowJS;
-}
+//void UWebViewWidget::CallJSFunStr(UWebViewWidget* Interface, FString CallbackName, FString jsonStr){
+//	if (Interface && CallbackName.Len() >= 4)	{
+//		Interface->CallJsonStr(CallbackName, jsonStr);
+//	}
+//}
 
-void UWebViewWidget::CallJSFunStr(UWebViewWidget* Interface, FString CallbackName, FString jsonStr){
-	if (Interface && CallbackName.Len() >= 4)	{
-		Interface->CallJsonStr(CallbackName, jsonStr);
-	}
+FString UWebViewWidget::JSWindow() {
+	return jsWindow;
 }
 
 /////////////////////////////////////////////////////
@@ -167,21 +161,21 @@ void UWebViewWidget::CallJSFunStr(UWebViewWidget* Interface, FString CallbackNam
 #ifdef JSON_LIB
 //void UWebViewWidget::Call(const FString& Function, const FJsonLibraryValue& Data)
 //{
-//	if (!WebCoreWidget.IsValid() || Function.IsEmpty() || Function == TEXT("dispatchue4event"))
+//	if (!CefCoreWidget.IsValid() || Function.IsEmpty() || Function == TEXT("dispatchue4event"))
 //		return;
 //	FString ScriptText;
 //	if (Data.GetType() != EJsonLibraryType::Invalid) {
 //		ScriptText = FString::Printf(TEXT("%s.interface[%s](%s)"),
-//			*windowJS,
+//			*jsWindow,
 //			*FJsonLibraryValue(Function).Stringify(),
 //			*Data.Stringify());
 //	}
 //	else {
 //		ScriptText = FString::Printf(TEXT("%s.interface[%s]()"),
-//			*windowJS,
+//			*jsWindow,
 //			*FJsonLibraryValue(Function).Stringify());
 //	}
-//	WebCoreWidget->ExecuteJavascript(ScriptText);
+//	CefCoreWidget->ExecuteJavascript(ScriptText);
 //}
 //void UWebViewWidget::CallJSFun(UWebViewWidget* Interface, FString CallbackName, const FJsonLibraryValue& Data)
 //{

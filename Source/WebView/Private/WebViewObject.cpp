@@ -2,25 +2,24 @@
 
 #include "WebViewObject.h"
 #include "WebViewWidget.h"
-#include "WebViewCallbackJS.h"
 
 
-void UWebViewObject::dispatchUE4Event(const FString& Name, const FString& Data, const FString& Callback)
+void UWebViewObject::SyncCallUe(const FString& Name, const FString& Data, const FString& Callback)
 {
-	if (!Widget.IsValid())
+	if (!UMG.IsValid())
 		return;
 #ifdef JSON_LIB
-	if (Widget->OnJsEvent.IsBound()){
-		Widget->OnJsEvent.Broadcast(Name, FJsonLibraryValue::Parse(Data), Callback);
+	if (UMG->OnJsEvent.IsBound()){
+		UMG->OnJsEvent.Broadcast(Name, FJsonLibraryValue::Parse(Data), Callback);
 	}
 #endif
-	if (Widget->OnJsEventStr.IsBound())  {
-		Widget->OnJsEventStr.Broadcast(Name, Data, Callback);
+	if (UMG->OnJsEventStr.IsBound()) {
+		UMG->OnJsEventStr.Broadcast(Name, Data, Callback);
 	}
 
 }
 
 
-void UWebViewObject::SetWidget(UWebViewWidget* InWidget){
-	Widget = InWidget;// StaticCast<UWebViewWidget*>(InWidget);
+void UWebViewObject::SetUMG(UWebViewWidget* InUMG){
+	UMG = InUMG;// StaticCast<UWebViewWidget*>(InWidget);
 }
