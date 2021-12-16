@@ -10,6 +10,7 @@ public class CefBrowser : ModuleRules
 		//bPrecompile = false;
 		bEnableExceptions = true;
 		bUsePrecompiled = !bPrecompile;
+		if(bUsePrecompiled) PrecompileForTargets = PrecompileTargetsType.None;
 		PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Public"));
 		string privatep = Path.Combine(ModuleDirectory, "Private");
 		if (Directory.Exists(privatep)) {

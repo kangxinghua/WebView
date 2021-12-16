@@ -13,8 +13,6 @@
 
 class UWebViewObject;
 
-
-
 /**
  * 
  */
@@ -149,14 +147,8 @@ protected:
 
 
 public:
-	///* static function */ 
-	//UFUNCTION(BlueprintCallable, Category = "Web View")
-	//static void CallJSFunStr(UWebViewWidget* Interface, FString CallbackName, FString DataStr);
-
-public:
+	/* this party use for jsonlibaray ,if use ,please delete comment.*/
 	//DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnJsEvent, const FString&, Key, FJsonLibraryValue, Json, const FString&, Callback);
-	//UFUNCTION(BlueprintCallable, Category = "Web View")
-	//static void CallJSFun(UWebViewWidget* Interface, FString CallbackName, const FJsonLibraryValue& Data);
 	//UPROPERTY(BlueprintAssignable, Category = "Web View | Events") 
 	//FOnJsEvent OnJsEvent; 
 	//UFUNCTION(BlueprintCallable, Category = "Web View", meta = (AdvancedDisplay = "Data", AutoCreateRefTerm = "Data"))
