@@ -12,6 +12,7 @@
 	"SupportURL": "https://github.com/aSurgingRiver",
 	"EngineVersion": "4.27.0",
 	"CanContainContent": true,
+	"EnabledByDefault": false,
 	"Installed": true,
 	"Modules": [
 		{
