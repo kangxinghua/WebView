@@ -82,8 +82,8 @@ void UWebViewWidget::UnbindUObject(const FString& Name, UObject* Object, bool bI
 }
 
 void UWebViewWidget::ReleaseSlateResources(bool bReleaseChildren){
-	CefCoreWidget.Reset();
 	Super::ReleaseSlateResources(bReleaseChildren);
+	CefCoreWidget.Reset();
 }
 
 TSharedRef<SWidget> UWebViewWidget::RebuildWidget(){
@@ -155,34 +155,22 @@ FString UWebViewWidget::JSWindow() {
 }
 
 /////////////////////////////////////////////////////
-
-
-
 #ifdef JSON_LIB
-//void UWebViewWidget::Call(const FString& Function, const FJsonLibraryValue& Data)
-//{
-//	if (!CefCoreWidget.IsValid() || Function.IsEmpty() || Function == TEXT("dispatchue4event"))
-//		return;
-//	FString ScriptText;
-//	if (Data.GetType() != EJsonLibraryType::Invalid) {
-//		ScriptText = FString::Printf(TEXT("%s.interface[%s](%s)"),
-//			*jsWindow,
-//			*FJsonLibraryValue(Function).Stringify(),
-//			*Data.Stringify());
-//	}
-//	else {
-//		ScriptText = FString::Printf(TEXT("%s.interface[%s]()"),
-//			*jsWindow,
-//			*FJsonLibraryValue(Function).Stringify());
-//	}
-//	CefCoreWidget->ExecuteJavascript(ScriptText);
-//}
-//void UWebViewWidget::CallJSFun(UWebViewWidget* Interface, FString CallbackName, const FJsonLibraryValue& Data)
-//{
-//	if (Interface && CallbackName.Len() >= 4)
-//	{
-//		Interface->Call(CallbackName, Data);
-//	}
-//}
+void UWebViewWidget::Call(const FString& Function, const FJsonLibraryValue& Data)
+{
+	if (!CefCoreWidget.IsValid() || Function.IsEmpty() || Function == TEXT("synccallue"))
+		return;
+	FString ScriptText;
+	if (Data.GetType() != EJsonLibraryType::Invalid) {
+		ScriptText = FString::Printf(TEXT("%s.interface[%s](%s)"),
+			*jsWindow, *FJsonLibraryValue(Function).Stringify(),
+			*Data.Stringify());
+	}
+	else {
+		ScriptText = FString::Printf(TEXT("%s.interface[%s]()"),
+			*jsWindow, *FJsonLibraryValue(Function).Stringify());
+	}
+	CefCoreWidget->ExecuteJavascript(ScriptText);
+}
 #endif
 #undef LOCTEXT_NAMESPACE
