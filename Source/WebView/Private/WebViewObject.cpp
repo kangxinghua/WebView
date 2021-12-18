@@ -16,9 +16,7 @@ void UWebViewObject::SyncCallUe(const FString& Name, const FString& Data, const 
 	if (UMG->OnJsEventStr.IsBound()) {
 		UMG->OnJsEventStr.Broadcast(Name, Data, Callback);
 	}
-
 }
-
 
 void UWebViewObject::SetUMG(UWebViewWidget* InUMG){
 	UMG = InUMG;// StaticCast<UWebViewWidget*>(InWidget);
