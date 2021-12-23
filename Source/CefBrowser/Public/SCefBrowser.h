@@ -116,6 +116,7 @@ public:
 	 */
 	void UnbindUObject(const FString& Name, UObject* Object, bool bIsPermanent = true);
 
+	//virtual bool SupportsKeyboardFocus() const override { return true; }
 public:
 	/** Default constructor. */
 	SCefBrowser();
