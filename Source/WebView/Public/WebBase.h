@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -24,7 +24,7 @@ public:
 public:
 	/** this party is blueprint delegate params */
 	UPROPERTY()
-	UWebViewObject* _ViewObject;// ±£´æUE4ÓëJsµÄÍ¨ĞÅÊı¾İ
+	UWebViewObject* _ViewObject;// ä¿å­˜UE4ä¸Jsçš„é€šä¿¡æ•°æ®
 	/** Called when loading stat changed */
 	UPROPERTY(BlueprintAssignable, Category = "Web View|Event")
 	FOnStateLoad OnLoadState;

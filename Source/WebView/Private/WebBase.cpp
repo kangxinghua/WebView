@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "WebBase.h"
@@ -34,6 +34,8 @@ UWebBase::UWebBase(const FObjectInitializer& ObjectInitializer)
 	, ColorBackground(255, 255, 255, 255)
 	, jsWindow(TEXT("ue"))
 {
+	bIsVariable = true;
+	Visibility = ESlateVisibility::SelfHitTestInvisible;
 	GConfig->GetString(TEXT("WebView"), TEXT("window"), jsWindow, GGameIni);
 	styleText.ColorAndOpacity = FSlateColor(FLinearColor(0.0f, 0.0f, 0.0f));
 	styleText.Font.Size = 20;
@@ -101,10 +103,11 @@ TSharedRef<SWidget> UWebBase::RebuildWidget() {
 		.EnableMouseTransparency(bEnableTransparency)
 		.SwitchInputMethod(SwitchInputMethod)
 		.ViewportSize(GetDesiredSize())
+		.Visibility(EVisibility::SelfHitTestInvisible)
 		.OnUrlChanged_UObject(this, &UWebBase::HandleOnUrlChanged)
 		.OnBeforePopup_UObject(this, &UWebBase::HandleOnBeforePopup)
 		.OnLoadState_UObject(this, &UWebBase::HandleOnLoadState);
-	_ViewObject = NewObject<UWebViewObject>();// ¸ôÀëJSºÍUE4Ö®¼äµÄÊı¾İ¡£
+	_ViewObject = NewObject<UWebViewObject>();// éš”ç¦»JSå’ŒUE4ä¹‹é—´çš„æ•°æ®ã€‚
 	if (_ViewObject) {
 		BindUObject("interface", _ViewObject);
 		SetJSOjbect(_ViewObject);
