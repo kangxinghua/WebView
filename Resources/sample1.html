@@ -1,7 +1,6 @@
 <html>
 <head>
 <script src="jsToUe.js">
-
 </script>
 
 </head>
@@ -15,7 +14,7 @@
     <input id="volumeSlider" type="range" min="0.01" max="1" step="0.01" />	
 </body>
 <script>
-    
+    // response function from ue call
     ue.interface.jsfunc = function(content){ };
     
 var button=document.getElementById('button');
@@ -23,12 +22,12 @@ var button=document.getElementById('button');
 		
 function playGame(){
 		//var url = 'rtsp://113.201.104.35:9090/dss/monitor/param?cameraid=1000054%247&substream=1' ;
-        ue4("keyword",'rtsp://113.201.104.35:9090/dss/monitor/param?cameraid=1000054%247&substream=1',
+        ue4("videoUrl",'rtsp://113.201.104.35:9090/dss/monitor/param?cameraid=1000054%247&substream=1',
         function(rv){
         	alert(rv);
         	}
         );
-        ue4("keyword",'{"url":"www.baidu.com"}',
+        ue4("SearchURL",{"url":"www.baidu.com"},
         function(rv){
         	alert(rv);
         	}
