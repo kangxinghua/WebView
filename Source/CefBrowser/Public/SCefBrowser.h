@@ -36,9 +36,9 @@ public:
 		_Visibility = EVisibility::SelfHitTestInvisible;
 	}
 
-	/* this party for event */
-	/** Called before a popup window happens */
-	SLATE_EVENT(FOnBeforePopup, OnBeforePopup)
+		/* this party for event */
+		/** Called before a popup window happens */
+		SLATE_EVENT(FOnBeforePopup, OnBeforePopup)
 		/** Called when document loading change. */
 		SLATE_EVENT(FOnLoadState, OnLoadState)
 		/** Called when the Url changes. */
@@ -65,13 +65,13 @@ public:
 		SLATE_ARGUMENT(bool, ShowAddressBar)
 		/** The frames per second rate that the browser will attempt to use. */
 		SLATE_ARGUMENT(int, BrowserFrameRate)
-		SLATE_END_ARGS()
+	SLATE_END_ARGS()
 
-		/**
-		 * Load the specified URL.
-		 * @param NewURL New URL to load.
-		 */
-		void LoadURL(FString NewURL);
+	/**
+		* Load the specified URL.
+		* @param NewURL New URL to load.
+		*/
+	void LoadURL(FString NewURL);
 
 	/** Get the current title of the web page. */
 	FText GetTitleText() const;
@@ -116,6 +116,7 @@ public:
 	 */
 	void UnbindUObject(const FString& Name, UObject* Object, bool bIsPermanent = true);
 
+	//virtual bool SupportsKeyboardFocus() const override { return true; }
 public:
 	/** Default constructor. */
 	SCefBrowser();
@@ -125,7 +126,13 @@ public:
 	 * @param InArgs  Declaration from which to construct the widget.
 	 */
 	void Construct(const FArguments& InArgs);
-
+private:
+	//
+	virtual void Tick(const FGeometry& AllottedGeometry, const double InCurrentTime, const float InDeltaTime);
+	virtual void OnDragEnter(const FGeometry& MyGeometry, const FDragDropEvent& DragDropEvent) override;
+	virtual void OnDragLeave(const FDragDropEvent& DragDropEvent) override;
+	virtual FReply OnDragOver(const FGeometry& MyGeometry, const FDragDropEvent& DragDropEvent) override;
+	virtual FReply OnDrop(const FGeometry& MyGeometry, const FDragDropEvent& DragDropEvent)override;
 private:
 	TSharedPtr<UWebCoreData> _WebCoreData;
 };
