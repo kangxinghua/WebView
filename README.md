@@ -6,7 +6,7 @@ Efficient UE browser uses CEF open source kernel; When the frame rate is 60 per 
 WebView is an enterprise browser plug-in designed for virtual engine. It uses many advanced technologies. It doesn't drop frames when browsing the web or watching video. The kernel adopts the latest CEF version and optimizes it. It has GPU binding function, supports the separation of game and browser rendering, adds rendering cache inside the plug-in, and the rendering effect is smooth. In terms of communication with web pages, V8 technology is adopted to make the Unreal Engine interact with web pages in real time. It is recommended to use phantom engine to render the scene and JavaScript for UI interaction, which can greatly improve the efficiency of system development.
 
 # Features:
-1. H264 and h265 protocols
+1. Support h264, h265, AV1 video codec
 2. Various video websites, such as youtube and bilibili
 3. Webrtc access cloud rendering
 4. Webrtc online voice and video
@@ -24,6 +24,7 @@ WebView is an enterprise browser plug-in designed for virtual engine. It uses ma
 
 # Important/Additional Notes:
 We are committed to providing the most efficient browser plug-in. If you have any questions in the process of using, you can contact us through the following ways.
+
 QQ: 249838628  
 Wechat: aSurgingRiver  
 Email: aSurgingRiver@163.com    aSurgingRiver@gmail.com
