@@ -38,7 +38,7 @@ namespace UnrealBuildTool.Rules
                 }
                 // 存在则判断内容是否一致
                 string dstContent = File.ReadAllText(pathDst);
-                if (GetMd5Hash(srcContent) == GetMd5Hash(dstContent)) {
+                if (srcContent.GetHashCode() == dstContent.GetHashCode()) {
                     continue;
                 }
                 File.WriteAllText(pathDst, srcContent);
@@ -70,17 +70,17 @@ namespace UnrealBuildTool.Rules
             }
         }
 
-        public string GetMd5Hash(string input){
-            if (input == null) {
-                return null;
-            }
-            MD5 md5Hash = MD5.Create();
-            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
-            StringBuilder sBuilder = new StringBuilder();
-            for (int i = 0; i < data.Length; i++) {
-                sBuilder.Append(data[i].ToString("x2"));
-            }
-            return sBuilder.ToString();
-        }
+        //public string GetMd5Hash(string input){
+        //    if (input == null) {
+        //        return null;
+        //    }
+        //    MD5 md5Hash = MD5.Create();
+        //    byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+        //    StringBuilder sBuilder = new StringBuilder();
+        //    for (int i = 0; i < data.Length; i++) {
+        //        sBuilder.Append(data[i].ToString("x2"));
+        //    }
+        //    return sBuilder.ToString();
+        //}
     }
 }
