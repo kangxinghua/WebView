@@ -9,9 +9,10 @@
 #include "WebBase.generated.h"
 class UWebViewObject;
 /**
- * 
+ * , BlueprintType, hidecategories = (Object)
  */
-UCLASS()
+//UCLASS()
+UCLASS(Abstract)
 class WEBVIEW_API UWebBase : public UWidget
 {
 	GENERATED_UCLASS_BODY()
