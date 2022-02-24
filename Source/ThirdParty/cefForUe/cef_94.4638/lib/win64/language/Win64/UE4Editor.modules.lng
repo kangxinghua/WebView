@@ -1,8 +1,0 @@
-{
-	"BuildId": "599799f6-b437-49ba-bcdd-1c3213f81488",
-	"Modules": 
-	{
-		"CefBrowser": "UE4Editor-CefBrowser.dll",
-		"WebView": "UE4Editor-WebView.dll"
-	}
-}

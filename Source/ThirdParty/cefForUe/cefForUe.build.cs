@@ -10,17 +10,37 @@ public class cefForUe : ModuleRules
 {
     public cefForUe(ReadOnlyTargetRules Target) : base(Target)
     {
-        if(Target.Platform != UnrealTargetPlatform.Win64 || !Target.bCompileCEF3)
-            return ;
+ //       if((Target.Platform != UnrealTargetPlatform.Win64
+ //           && Target.Platform != UnrealTargetPlatform.Linux))
+ //           return;
         Type = ModuleType.External;
         string CEFVersion = "cef_94.4638";
+        string platform;//= "win64";
+        string renderName;//= "cefhelper.exe";
+        string subfixDLL;
+        //string subfixEXE;
+        if (Target.Platform == UnrealTargetPlatform.Win64)
+        {
+            platform = "win64";
+            renderName = "cefhelper.exe";
+            subfixDLL = ".dll";
+        }
+        else if (Target.Platform == UnrealTargetPlatform.Linux)
+        {
+            platform = "linux";
+            renderName = "cefhelper";
+            subfixDLL = ".so";
+        }
+        else {
+            return;
+        }
         string CEFRoot = Path.Combine(ModuleDirectory, CEFVersion);
-        string LibraryPath = Path.Combine(CEFRoot, "lib","win64");
-        string renderName = "cefhelper.exe";
+        string LibraryPath = Path.Combine(CEFRoot, platform, "lib");
+        Type = ModuleType.External;
         // merge file
         Dictionary<string, Dictionary<int, string>> mapFile = new Dictionary<string, Dictionary<int, string>>();
         // And the entire Resources folder. Enumerate the entire directory instead of mentioning each file manually here.
-        foreach (string FileName in Directory.EnumerateFiles(CEFRoot, "*.split", SearchOption.AllDirectories))
+        foreach (string FileName in Directory.EnumerateFiles(CEFRoot, "*"+subfixDLL, SearchOption.AllDirectories))
         {// 获取合并文件
             string file = Path.GetFileName(FileName);
             string filePath = Path.GetDirectoryName(FileName);
@@ -55,15 +75,16 @@ public class cefForUe : ModuleRules
         }
 
 
-        PublicSystemIncludePaths.Add(CEFRoot);
+        PublicSystemIncludePaths.Add(Path.Combine(CEFRoot, platform));
         PublicDefinitions.Add("CEF3_RENDER=\"" + renderName + "\""); //
         PublicDefinitions.Add("CEF3_VERSION=\"" + CEFVersion + "\""); //
 
         // And the entire Resources folder. Enumerate the entire directory instead of mentioning each file manually here.
-        foreach (string FileName in Directory.EnumerateFiles(LibraryPath, "*.lib", SearchOption.TopDirectoryOnly)){
-            PublicAdditionalLibraries.Add(FileName);
-        }
-        foreach (string FileName in Directory.EnumerateFiles(LibraryPath, "*.dll", SearchOption.TopDirectoryOnly)){
+        if (Target.Platform == UnrealTargetPlatform.Win64)
+            foreach (string FileName in Directory.EnumerateFiles(LibraryPath, "*.lib", SearchOption.TopDirectoryOnly)){
+                PublicAdditionalLibraries.Add(FileName);
+            }
+        foreach (string FileName in Directory.EnumerateFiles(LibraryPath, "*"+ subfixDLL, SearchOption.TopDirectoryOnly)){
             //System.Console.WriteLine("cef3lib: " + LibraryPath+" "+ System.IO.Path.GetFileName(FileName));
             PublicDelayLoadDLLs.Add(System.IO.Path.GetFileName(FileName));
             RuntimeDependencies.Add(FileName);
@@ -72,8 +93,8 @@ public class cefForUe : ModuleRules
         Dlls.Add("icudtl.dat");
         Dlls.Add("snapshot_blob.bin");
         Dlls.Add("v8_context_snapshot.bin");
-        Dlls.Add(Path.Combine("swiftshader", "libEGL.dll"));
-        Dlls.Add(Path.Combine("swiftshader", "libGLESv2.dll"));
+        Dlls.Add(Path.Combine("swiftshader", "libEGL"+ subfixDLL));
+        Dlls.Add(Path.Combine("swiftshader", "libGLESv2"+ subfixDLL));
         foreach (string Dll in Dlls) {
             RuntimeDependencies.Add(Path.Combine(LibraryPath, Dll));
         }
@@ -91,8 +112,8 @@ public class cefForUe : ModuleRules
         string pluginPath = Path.Combine(modulePath, "..", "..", "..");
         // Source\ThirdPaty\cef3lib\cef_94.4638\include
         // Source\ThirdPaty\cef3lib\cef_94.4638\lib\win64\language
-        CopyDir(".lng", Path.Combine(modulePath, CEFVersion, "include", "language"), Path.Combine(pluginPath, "Intermediate"));
-        CopyDir(".lng", Path.Combine(modulePath, CEFVersion, "lib", "win64", "language"), Path.Combine(pluginPath, "Binaries"));
+        CopyDir(".lng", Path.Combine(modulePath, "language", "Intermediate"), Path.Combine(pluginPath, "Intermediate"));
+        CopyDir(".lng", Path.Combine(modulePath, "language", "Binaries"), Path.Combine(pluginPath, "Binaries"));
     }
     void CopyDir(string subfix, string outPath, string DstRoot) {
         if (!Directory.Exists(outPath)) return;
