@@ -40,8 +40,8 @@ public class cefForUe : ModuleRules
         // merge file
         Dictionary<string, Dictionary<int, string>> mapFile = new Dictionary<string, Dictionary<int, string>>();
         // And the entire Resources folder. Enumerate the entire directory instead of mentioning each file manually here.
-        foreach (string FileName in Directory.EnumerateFiles(CEFRoot, "*"+subfixDLL, SearchOption.AllDirectories))
-        {// »ñÈ¡ºÏ²¢ÎÄ¼ş
+        foreach (string FileName in Directory.EnumerateFiles(CEFRoot, "*.split", SearchOption.AllDirectories))
+        {// è·å–åˆå¹¶æ–‡ä»¶
             string file = Path.GetFileName(FileName);
             string filePath = Path.GetDirectoryName(FileName);
             //Console.WriteLine(FileName);
@@ -57,7 +57,7 @@ public class cefForUe : ModuleRules
             mapFile[splitPN].Add(idx, FileName);
         }
         const int maxBuff = 1024 * 1024 * 100;
-        byte[] readBuff = new byte[maxBuff];// µ¥¸öÎÄ¼ş×î´ó100M
+        byte[] readBuff = new byte[maxBuff];// å•ä¸ªæ–‡ä»¶æœ€å¤§100M
         foreach (KeyValuePair<string, Dictionary<int, string>> kvp in mapFile){
             if (kvp.Value.Count == 0) continue;
             FileStream fileDst = new FileStream(kvp.Key, FileMode.OpenOrCreate);
@@ -104,7 +104,7 @@ public class cefForUe : ModuleRules
         }
         RuntimeDependencies.Add(Path.Combine(LibraryPath, renderName));
         string webviewLic = Path.Combine(LibraryPath, "webview.dat");
-        if (File.Exists(webviewLic)) {// Èç¹û´æÔÚÔò·ÅÈëlicense
+        if (File.Exists(webviewLic)) {// å¦‚æœå­˜åœ¨åˆ™æ”¾å…¥license
             RuntimeDependencies.Add(webviewLic);
         }
         // Restore backup
