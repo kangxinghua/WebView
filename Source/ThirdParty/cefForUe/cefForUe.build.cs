@@ -89,6 +89,12 @@ public class cefForUe : ModuleRules
         Dlls.Add("icudtl.dat");
         Dlls.Add("snapshot_blob.bin");
         Dlls.Add("v8_context_snapshot.bin");
+        if (Target.Platform == UnrealTargetPlatform.Linux)
+        {
+            Dlls.Add("vk_swiftshader_icd.json");
+            PublicDelayLoadDLLs.Add("libvulkan.so.1");
+            RuntimeDependencies.Add(Path.Combine(LibraryPath, "libvulkan.so.1"));
+        }
         Dlls.Add(Path.Combine("swiftshader", "libEGL"+ subfixDLL));
         Dlls.Add(Path.Combine("swiftshader", "libGLESv2"+ subfixDLL));
         foreach (string Dll in Dlls) {
