@@ -1,4 +1,7 @@
 # WebView
+# Upgrade tips
+The preview version is currently unstable. The browser creation timeout is prompted when running. There are some changes in the bottom layer of the preview version of the illusory engine. It will be abnormal when the plug-in loads the CEF dynamic library. The problem is expected to be solved when the official version of the illusory engine is released later. This version is only used for code compilation to ensure that the project is upgraded and compiled normally.
+
 # SHORT DESCRIPTION:
 Efficient UE browser uses CEF open source kernel; When the frame rate is 60 per second and the resolution is 4K, a single GPU is rendered, and the UE and browser will not lose frames. 8K frame rate does not decrease under multi GPU binding.It is the highest performance UE browser at present.
 
