@@ -3,6 +3,7 @@
 using UnrealBuildTool;
 using System;
 using System.IO;
+using System.Text;
 using System.Collections.Generic;
 using System.IO.Compression;
 
@@ -10,24 +11,28 @@ public class cefForUe : ModuleRules
 {
     public cefForUe(ReadOnlyTargetRules Target) : base(Target)
     {
-        //       if((Target.Platform != UnrealTargetPlatform.Win64
-        //           && Target.Platform != UnrealTargetPlatform.Linux))
-        //           return;
         Type = ModuleType.External;
+        Console.WriteLine(Target.bBuildEditor ? "editor":"runtime");
         if (Target.Platform == UnrealTargetPlatform.Win64)
         {
-            InitCEF3("cef_94.4638", "win64", "cefhelper.exe", ".dll");
+            InitCEF3("cef_94.4638", "win64", "cefhelper.exe", ".dll", !Target.bBuildEditor);
         }
         else if (Target.Platform == UnrealTargetPlatform.Linux)
         {
-            InitCEF3("cef_94.4638", "linux", "cefhelper", ".so");
+            InitCEF3("cef_94.4638", "linux", "cefhelper", ".so", !Target.bBuildEditor);
         }
         else
         {
             return;
         }
+        if (!Target.bBuildEditor) return;
+        CheckLicense(""+Target.ProjectFile.ToFileInfo().Directory);
+        // Target.ProjectFile.ToFileInfo().Directory
+        // Console.WriteLine("============="+  Target.ProjectFile.ToFileInfo().Directory);
+        // 检查license授权目录 
+        // Process.GetCurrentProcess().Kill(); 
     }
-    void InitCEF3(string CEFVersion, string platform, string renderName, string subfixDLL)
+    void InitCEF3(string CEFVersion, string platform, string renderName, string subfixDLL,bool isRuntime)
     {
         string CEFRoot = Path.Combine(ModuleDirectory, CEFVersion);
         string LibraryPath = Path.Combine(CEFRoot, platform, "lib");
@@ -38,6 +43,7 @@ public class cefForUe : ModuleRules
         // And the entire Resources folder. Enumerate the entire directory instead of mentioning each file manually here.
         foreach (string FileName in Directory.EnumerateFiles(CEFRoot, "*"+ split, SearchOption.AllDirectories))
         {// 获取合并文件
+            if(isRuntime)break;
             string file = Path.GetFileName(FileName);
             string filePath = Path.GetDirectoryName(FileName);
             //Console.WriteLine(FileName);
@@ -66,7 +72,6 @@ public class cefForUe : ModuleRules
                     fileDst.Write(readBuff, 0, readLen);
                     fileSize -= readLen;
                 }
-                //Console.WriteLine(oneKvp.Value + " pos " + fileSrc.Length);
             }
         }
 
@@ -105,15 +110,17 @@ public class cefForUe : ModuleRules
             RuntimeDependencies.Add(FileName);
         }
         RuntimeDependencies.Add(Path.Combine(LibraryPath, renderName));
-        string webviewLic = Path.Combine(ModuleDirectory, "license", "webview.dat");
-        if (File.Exists(webviewLic)) {// 如果存在则放入license
-            RuntimeDependencies.Add(webviewLic);
-        }
+        //string webviewLic = Path.Combine(ModuleDirectory, "license", "webview.dat");
+        //if (File.Exists(webviewLic)) {// 如果存在则放入license
+        //    RuntimeDependencies.Add(webviewLic);
+        //}
         // Restore backup
         string modulePath = ModuleDirectory;
         string pluginPath = Path.Combine(modulePath, "..", "..", "..");
-        // Source\ThirdPaty\cef3lib\cef_94.4638\include
-        // Source\ThirdPaty\cef3lib\cef_94.4638\lib\win64\language
+// Source\ThirdPaty\cef3lib\cef_94.4638\include
+// Source\ThirdPaty\cef3lib\cef_94.4638\lib\win64\language
+
+        if (isRuntime) return ;
         CopyDir(".lng", Path.Combine(modulePath, "language", "Intermediate"), Path.Combine(pluginPath, "Intermediate"));
         CopyDir(".lng", Path.Combine(modulePath, "language", "Binaries"), Path.Combine(pluginPath, "Binaries"));
     }
@@ -131,5 +138,34 @@ public class cefForUe : ModuleRules
             }
             System.IO.File.Copy(FileName, newFile, true);
         }
+    }
+
+    void CheckLicense(string Target) {
+        string license = Path.Combine(Target, "Content","license","WebView.dat");
+        if (!File.Exists(license)) return;// 没有授权文件
+        string GamePath = Path.Combine(Target, "Config");
+        string GameCfg = Path.Combine(GamePath, "DefaultGame.ini");
+        if (!Directory.Exists(GamePath)) {
+            Directory.CreateDirectory(GamePath);
+        }
+        if (!File.Exists(GameCfg)) {
+            File.Create(GameCfg);
+        }
+        string content = File.ReadAllText(GameCfg, Encoding.UTF8);
+        string licensePak = "+DirectoriesToAlwaysStageAsUFS=(Path=\"license\")";
+        string licenseNode = "[/Script/UnrealEd.ProjectPackagingSettings]";
+        if (content.Contains(licenseNode))
+        {
+            if (content.Contains(licensePak)) {
+                Console.WriteLine(GameCfg+" has configure!");
+                return;// 已经有配置
+            }
+            content = content.Replace(licenseNode, licenseNode + "\n" + licensePak);
+        }
+        else {
+            content += "\n\n" + licenseNode + "\n" + licensePak;
+        }
+        File.WriteAllText(GameCfg, content, Encoding.UTF8);
+        Console.WriteLine(GameCfg + " auto configure!");
     }
 }

@@ -7,7 +7,7 @@ public class CefBrowser : ModuleRules
 {
 	public CefBrowser(ReadOnlyTargetRules Target) : base(Target)
 	{
-		//bPrecompile = false;
+		bPrecompile = false;
 		bEnableExceptions = true;
 		bUsePrecompiled = !bPrecompile;
 		if(bUsePrecompiled) PrecompileForTargets = PrecompileTargetsType.None;
