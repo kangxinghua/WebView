@@ -4,9 +4,9 @@
    结构如下：
    Content/license/WebView.dat
 
-3. 更新授权文件后,请删除 WebView\Binaries\Win64\UE4Editor-CefBrowser.dll 文件。
+3. 更新授权文件后,重新编译项目。
 
-4. 完成以上操作后重启两次项目
+4. 完成以上操作后重启一次项目
 
 5. 正式版用户授权在发布时，授权文件将随项目打包到pak文件中。
 
