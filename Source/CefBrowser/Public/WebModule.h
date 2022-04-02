@@ -31,7 +31,4 @@ public:
 
 	virtual void OnBeginPIE() = 0;
 	virtual void OnEndPIE() = 0;
-	//virtual void DefaultMaterial(UMaterialInterface* InDefaultMaterial) = 0;
-	//virtual void DefaultTranslucentMaterial(UMaterialInterface* InDefaultMaterial) = 0;
-
 };

@@ -62,7 +62,7 @@ class CefMainArgs : public CefStructBase<CefMainArgsTraits> {
   CefMainArgs() : parent() {}
   explicit CefMainArgs(const cef_main_args_t& r) : parent(r) {}
   explicit CefMainArgs(const CefMainArgs& r) : parent(r) {}
-  explicit CefMainArgs(HINSTANCE hInstance) : parent() { instance = hInstance; }
+  explicit CefMainArgs(HINSTANCE _hInstance) : parent() { instance = _hInstance; }
 };
 
 struct CefWindowInfoTraits {
