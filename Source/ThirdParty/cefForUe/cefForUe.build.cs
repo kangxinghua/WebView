@@ -10,38 +10,31 @@ public class cefForUe : ModuleRules
 {
     public cefForUe(ReadOnlyTargetRules Target) : base(Target)
     {
- //       if((Target.Platform != UnrealTargetPlatform.Win64
- //           && Target.Platform != UnrealTargetPlatform.Linux))
- //           return;
         Type = ModuleType.External;
-        string CEFVersion = "cef_94.4638";
-        string platform;//= "win64";
-        string renderName;//= "cefhelper.exe";
-        string subfixDLL;
-        //string subfixEXE;
         if (Target.Platform == UnrealTargetPlatform.Win64)
         {
-            platform = "win64";
-            renderName = "cefhelper.exe";
-            subfixDLL = ".dll";
+            InitCEF3("cef_94.4638", "win64", "cefhelper.exe", ".dll");
         }
         else if (Target.Platform == UnrealTargetPlatform.Linux)
         {
-            platform = "linux";
-            renderName = "cefhelper";
-            subfixDLL = ".so";
+            InitCEF3("cef_94.4638", "linux", "cefhelper", ".so");
         }
-        else {
+        else
+        {
             return;
         }
+    }
+    void InitCEF3(string CEFVersion, string platform, string renderName, string subfixDLL)
+    {
         string CEFRoot = Path.Combine(ModuleDirectory, CEFVersion);
         string LibraryPath = Path.Combine(CEFRoot, platform, "lib");
         Type = ModuleType.External;
+        string split = ".split";
         // merge file
         Dictionary<string, Dictionary<int, string>> mapFile = new Dictionary<string, Dictionary<int, string>>();
         // And the entire Resources folder. Enumerate the entire directory instead of mentioning each file manually here.
-        foreach (string FileName in Directory.EnumerateFiles(CEFRoot, "*.split", SearchOption.AllDirectories))
-        {// Ëé∑ÂèñÂêàÂπ∂Êñá‰ª∂
+        foreach (string FileName in Directory.EnumerateFiles(CEFRoot, "*"+ split, SearchOption.AllDirectories))
+        {// ªÒ»°∫œ≤¢Œƒº˛
             string file = Path.GetFileName(FileName);
             string filePath = Path.GetDirectoryName(FileName);
             //Console.WriteLine(FileName);
@@ -53,11 +46,11 @@ public class cefForUe : ModuleRules
             if (File.Exists(splitPN)) continue;
             if (!mapFile.ContainsKey(splitPN))
                 mapFile.Add(splitPN, new Dictionary<int, string>());
-            int idx = int.Parse(file.Replace(".split", ""));
+            int idx = int.Parse(file.Replace(split, ""));
             mapFile[splitPN].Add(idx, FileName);
         }
         const int maxBuff = 1024 * 1024 * 100;
-        byte[] readBuff = new byte[maxBuff];// Âçï‰∏™Êñá‰ª∂ÊúÄÂ§ß100M
+        byte[] readBuff = new byte[maxBuff];// µ•∏ˆŒƒº˛◊Ó¥Û100M
         foreach (KeyValuePair<string, Dictionary<int, string>> kvp in mapFile){
             if (kvp.Value.Count == 0) continue;
             FileStream fileDst = new FileStream(kvp.Key, FileMode.OpenOrCreate);
@@ -93,6 +86,12 @@ public class cefForUe : ModuleRules
         Dlls.Add("icudtl.dat");
         Dlls.Add("snapshot_blob.bin");
         Dlls.Add("v8_context_snapshot.bin");
+        if (Target.Platform == UnrealTargetPlatform.Linux)
+        {
+            Dlls.Add("vk_swiftshader_icd.json");
+            PublicDelayLoadDLLs.Add("libvulkan.so.1");
+            RuntimeDependencies.Add(Path.Combine(LibraryPath, "libvulkan.so.1"));
+        }
         Dlls.Add(Path.Combine("swiftshader", "libEGL"+ subfixDLL));
         Dlls.Add(Path.Combine("swiftshader", "libGLESv2"+ subfixDLL));
         foreach (string Dll in Dlls) {
@@ -103,8 +102,8 @@ public class cefForUe : ModuleRules
             RuntimeDependencies.Add(FileName);
         }
         RuntimeDependencies.Add(Path.Combine(LibraryPath, renderName));
-        string webviewLic = Path.Combine(LibraryPath, "webview.dat");
-        if (File.Exists(webviewLic)) {// Â¶ÇÊûúÂ≠òÂú®ÂàôÊîæÂÖ•license
+        string webviewLic = Path.Combine(ModuleDirectory, "license", "webview.dat");
+        if (File.Exists(webviewLic)) {// »Áπ˚¥Ê‘⁄‘Ú∑≈»Îlicense
             RuntimeDependencies.Add(webviewLic);
         }
         // Restore backup
