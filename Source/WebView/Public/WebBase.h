@@ -67,6 +67,12 @@ public:
 	/** Whether to show standard controls like Back, Forward, Reload etc. */
 	UPROPERTY(EditAnywhere, meta = (DisplayName = "Show Controls", UIMin = 0, UIMax = 1), Category = "Web View|Show Head")
 		bool  controlShow = false;
+
+	UPROPERTY(EditAnywhere, meta = (DisplayName = "Web Pixel", UIMin = 64, UIMax = 8192), Category = "Web View|Screen")
+	FIntPoint _Pixel;
+	UPROPERTY(EditAnywhere, meta = (DisplayName = "Zoom Level", ClampMin = -7.5, ClampMax = 9.5), Category = "Web View|Screen")
+	float _Zoom;
+
 protected:
 	FString jsWindow;// for javescrit 
 	TSharedPtr<class SCefBrowser> CefCoreWidget; // for slate core widget
@@ -78,14 +84,14 @@ public:
 	* @param ScriptText JavaScript string to execute
 	*/
 	UFUNCTION(BlueprintCallable, Category = "Web View")
-		void ExecuteJavascript(const FString& ScriptText);
+	void ExecuteJavascript(const FString& ScriptText);
 
 	/**
 	 * Load the specified URL
 	 * @param NewURL New URL to load
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Web View")
-		void LoadURL(FString NewURL);
+	void LoadURL(FString NewURL);
 
 	UFUNCTION(BlueprintCallable, Category = "Web View", meta = (AdvancedDisplay = "Data", AutoCreateRefTerm = "Data"))
 		void CallJsonStr(const FString& Function, const FString& Data);
@@ -122,6 +128,22 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Web View")
 		FString GetUrl() const;
 
+	/**
+	* Set web page zoom level 
+	* @ zoom : between -7.5 and 9.0
+	* when Pixel was set,then zoom invalid 
+	*/
+	UFUNCTION(BlueprintCallable, Category = "Web View")
+	void ZoomLevel(float zoom=0.0) const;
+
+	/**
+	* Set web page zoom level
+	* @ pixel.x : between 128 and 1024*8
+	* @ pixel.y : between 64 and 756*8
+	* when Pixel was set,then zoom invalid
+	*/
+	UFUNCTION(BlueprintCallable, Category = "Web View")
+	void WebPixel(FIntPoint pixel) const;
 public:
 
 	virtual void ReleaseSlateResources(bool bReleaseChildren) override;

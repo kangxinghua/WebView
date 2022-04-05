@@ -33,6 +33,8 @@ UWebBase::UWebBase(const FObjectInitializer& ObjectInitializer)
 	, styleText(FTextBlockStyle::GetDefault())
 	, ColorBackground(255, 255, 255, 255)
 	, jsWindow(TEXT("ue"))
+	, _Pixel(128,64)
+	, _Zoom(9.5f)
 {
 	bIsVariable = true;
 	Visibility = ESlateVisibility::SelfHitTestInvisible;
@@ -68,12 +70,21 @@ void UWebBase::CallJsonStr(const FString& Function, const FString& Data)
 			*jsWindow, *Function);
 	}
 	CefCoreWidget->ExecuteJavascript(TextScript);
-
 }
 
 FString UWebBase::GetUrl() const {
 	if (!CefCoreWidget.IsValid())return FString();
 	return CefCoreWidget->GetUrl();
+}
+
+void UWebBase::ZoomLevel(float zoom) const {
+	if (!CefCoreWidget.IsValid())return;
+	CefCoreWidget->ZoomLevel(zoom);
+}
+
+void UWebBase::WebPixel(FIntPoint pixel) const {
+	if (!CefCoreWidget.IsValid())return;
+	CefCoreWidget->WebPixel(pixel);
 }
 
 void UWebBase::BindUObject(const FString& VarName, UObject* Object, bool bIsPermanent) {
@@ -103,6 +114,8 @@ TSharedRef<SWidget> UWebBase::RebuildWidget() {
 		.EnableMouseTransparency(bEnableTransparency)
 		.SwitchInputMethod(SwitchInputMethod)
 		.ViewportSize(GetDesiredSize())
+		.Pixel(_Pixel)
+		.zoom(_Zoom)
 		.Visibility(EVisibility::SelfHitTestInvisible)
 		.OnUrlChanged_UObject(this, &UWebBase::HandleOnUrlChanged)
 		.OnBeforePopup_UObject(this, &UWebBase::HandleOnBeforePopup)

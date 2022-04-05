@@ -29,7 +29,7 @@ public class cefForUe : ModuleRules
         CheckLicense(""+Target.ProjectFile.ToFileInfo().Directory);
         // Target.ProjectFile.ToFileInfo().Directory
         // Console.WriteLine("============="+  Target.ProjectFile.ToFileInfo().Directory);
-        // ¼ì²élicenseÊÚÈ¨Ä¿Â¼ 
+        // æ£€æŸ¥licenseæˆæƒç›®å½• 
         // Process.GetCurrentProcess().Kill(); 
     }
     void InitCEF3(string CEFVersion, string platform, string renderName, string subfixDLL,bool isRuntime)
@@ -42,7 +42,7 @@ public class cefForUe : ModuleRules
         Dictionary<string, Dictionary<int, string>> mapFile = new Dictionary<string, Dictionary<int, string>>();
         // And the entire Resources folder. Enumerate the entire directory instead of mentioning each file manually here.
         foreach (string FileName in Directory.EnumerateFiles(CEFRoot, "*"+ split, SearchOption.AllDirectories))
-        {// »ñÈ¡ºÏ²¢ÎÄ¼ş
+        {// è·å–åˆå¹¶æ–‡ä»¶
             if(isRuntime)break;
             string file = Path.GetFileName(FileName);
             string filePath = Path.GetDirectoryName(FileName);
@@ -59,7 +59,7 @@ public class cefForUe : ModuleRules
             mapFile[splitPN].Add(idx, FileName);
         }
         const int maxBuff = 1024 * 1024 * 100;
-        byte[] readBuff = new byte[maxBuff];// µ¥¸öÎÄ¼ş×î´ó100M
+        byte[] readBuff = new byte[maxBuff];// å•ä¸ªæ–‡ä»¶æœ€å¤§100M
         foreach (KeyValuePair<string, Dictionary<int, string>> kvp in mapFile){
             if (kvp.Value.Count == 0) continue;
             FileStream fileDst = new FileStream(kvp.Key, FileMode.OpenOrCreate);
@@ -111,7 +111,7 @@ public class cefForUe : ModuleRules
         }
         RuntimeDependencies.Add(Path.Combine(LibraryPath, renderName));
         //string webviewLic = Path.Combine(ModuleDirectory, "license", "webview.dat");
-        //if (File.Exists(webviewLic)) {// Èç¹û´æÔÚÔò·ÅÈëlicense
+        //if (File.Exists(webviewLic)) {// å¦‚æœå­˜åœ¨åˆ™æ”¾å…¥license
         //    RuntimeDependencies.Add(webviewLic);
         //}
         // Restore backup
@@ -140,9 +140,19 @@ public class cefForUe : ModuleRules
         }
     }
 
-    void CheckLicense(string Target) {
-        string license = Path.Combine(Target, "Content","license","WebView.dat");
-        if (!File.Exists(license)) return;// Ã»ÓĞÊÚÈ¨ÎÄ¼ş
+    void CheckLicense(string Target)
+    {
+        string licensePath = Path.Combine(Target, "Content", "license");
+        if (!Directory.Exists(licensePath)){
+            Directory.CreateDirectory(licensePath);
+        }
+        string license = Path.Combine(licensePath, "webview.dat");
+        if (!File.Exists(license)) {
+            string webviewLic = Path.Combine(ModuleDirectory, "license", "webview.dat");
+            if (File.Exists(webviewLic)) {
+                System.IO.File.Copy(webviewLic, license);
+            }
+        }
         string GamePath = Path.Combine(Target, "Config");
         string GameCfg = Path.Combine(GamePath, "DefaultGame.ini");
         if (!Directory.Exists(GamePath)) {
@@ -151,14 +161,21 @@ public class cefForUe : ModuleRules
         if (!File.Exists(GameCfg)) {
             File.Create(GameCfg);
         }
-        string content = File.ReadAllText(GameCfg, Encoding.UTF8);
+        //if( File.OpenWrite(GameCfg)) return ;
+        string content;
+        try { content = File.ReadAllText(GameCfg, Encoding.UTF8); }
+        catch
+        {// æ–‡ä»¶åœ¨ä½¿ç”¨ä¸­
+            return;
+        }
+            
         string licensePak = "+DirectoriesToAlwaysStageAsUFS=(Path=\"license\")";
         string licenseNode = "[/Script/UnrealEd.ProjectPackagingSettings]";
         if (content.Contains(licenseNode))
         {
             if (content.Contains(licensePak)) {
                 Console.WriteLine(GameCfg+" has configure!");
-                return;// ÒÑ¾­ÓĞÅäÖÃ
+                return;// å·²ç»æœ‰é…ç½®
             }
             content = content.Replace(licenseNode, licenseNode + "\n" + licensePak);
         }
