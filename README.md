@@ -24,7 +24,7 @@ WebView is an enterprise browser plug-in designed for virtual engine. It uses ma
 15. GPU binding separates virtual engine and browser rendering
 
 # Using tutorials
-https://blog.csdn.net/he_goodluck/article/details/122892847
+https://www.zhihu.com/column/c_1490114276946223104
 
 # Important/Additional Notes:
 We are committed to providing the most efficient browser plug-in. If you have any questions in the process of using, you can contact us through the following ways.
