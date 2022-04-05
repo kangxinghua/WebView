@@ -11,7 +11,6 @@ public class CefBrowser : ModuleRules
 		bEnableExceptions = true;
 		bUsePrecompiled = !bPrecompile;
 		if(bUsePrecompiled) PrecompileForTargets = PrecompileTargetsType.None;
-		//PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs ;
 		PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Public"));
 		string privatep = Path.Combine(ModuleDirectory, "Private");
 		if (Directory.Exists(privatep)) {
