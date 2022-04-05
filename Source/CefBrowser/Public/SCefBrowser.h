@@ -65,6 +65,11 @@ public:
 		SLATE_ARGUMENT(bool, ShowAddressBar)
 		/** The frames per second rate that the browser will attempt to use. */
 		SLATE_ARGUMENT(int, BrowserFrameRate)
+		/** fixed pixel. */
+		SLATE_ARGUMENT(FIntPoint, Pixel)
+		/** zoom level*/
+		SLATE_ARGUMENT(float, zoom)
+		//SLATE_ARGUMENT(float, zoomlevel)
 	SLATE_END_ARGS()
 
 	/**
@@ -97,7 +102,10 @@ public:
 	FString GetUrl() const;
 	/** Navigate forwards. */
 	void GoForward();
-
+	/** Set Page Zoom level */
+	void ZoomLevel(float zoomlevel);
+	/** Set Page Zoom level */
+	void WebPixel(FIntPoint pixel);
 	/**
 	 * Expose a UObject instance to the browser runtime.
 	 * Properties and Functions will be accessible from JavaScript side.

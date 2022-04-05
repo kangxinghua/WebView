@@ -140,9 +140,19 @@ public class cefForUe : ModuleRules
         }
     }
 
-    void CheckLicense(string Target) {
-        string license = Path.Combine(Target, "Content","license","WebView.dat");
-        if (!File.Exists(license)) return;// 没有授权文件
+    void CheckLicense(string Target)
+    {
+        string licensePath = Path.Combine(Target, "Content", "license");
+        if (!Directory.Exists(licensePath)){
+            Directory.CreateDirectory(licensePath);
+        }
+        string license = Path.Combine(licensePath, "webview.dat");
+        if (!File.Exists(license)) {
+            string webviewLic = Path.Combine(ModuleDirectory, "license", "webview.dat");
+            if (File.Exists(webviewLic)) {
+                System.IO.File.Copy(webviewLic, license);
+            }
+        }
         string GamePath = Path.Combine(Target, "Config");
         string GameCfg = Path.Combine(GamePath, "DefaultGame.ini");
         if (!Directory.Exists(GamePath)) {
@@ -151,7 +161,14 @@ public class cefForUe : ModuleRules
         if (!File.Exists(GameCfg)) {
             File.Create(GameCfg);
         }
-        string content = File.ReadAllText(GameCfg, Encoding.UTF8);
+        //if( File.OpenWrite(GameCfg)) return ;
+        string content;
+        try { content = File.ReadAllText(GameCfg, Encoding.UTF8); }
+        catch
+        {// 文件在使用中
+            return;
+        }
+            
         string licensePak = "+DirectoriesToAlwaysStageAsUFS=(Path=\"license\")";
         string licenseNode = "[/Script/UnrealEd.ProjectPackagingSettings]";
         if (content.Contains(licenseNode))
