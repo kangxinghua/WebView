@@ -24,6 +24,7 @@ WebView is an enterprise browser plug-in designed for virtual engine. It uses ma
 15. GPU binding separates virtual engine and browser rendering
 16. Local domain name resolution
 17. Scale page
+18. 120 frame rate does not drop frames
 
 # Using tutorials
 https://www.zhihu.com/column/c_1490114276946223104
