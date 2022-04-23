@@ -163,7 +163,7 @@ public class cefForUe : ModuleRules
         }
         //if( File.OpenWrite(GameCfg)) return ;
         string content;
-        try { content = File.ReadAllText(GameCfg, Encoding.UTF8); }
+        try { content = File.ReadAllText(GameCfg/*, Encoding.UTF8*/); }
         catch
         {// 文件在使用中
             return;
