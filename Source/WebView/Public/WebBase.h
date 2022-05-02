@@ -22,6 +22,7 @@ public:
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUrlChanged, const FText&, Url);
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnJsStr, const FString&, Type, FString, JSON, const FString&, FuncName);
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnBeforePopup, FString, Url, FString, Frame);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnDownloadComplete, FString, Url, FString, File);
 public:
 	/** this party is blueprint delegate params */
 	UPROPERTY()
@@ -38,6 +39,9 @@ public:
 	/** Called when a popup is about to spawn. */
 	UPROPERTY(BlueprintAssignable, Category = "Web View|Event")
 	FOnBeforePopup OnBeforePopup;
+	/** Called when a popup is about to spawn. */
+	UPROPERTY(BlueprintAssignable, Category = "Web View|Event")
+	FOnDownloadComplete OnDownloadComplete;
 
 	/** this party is blueprint editor params */
 	/** URL that the browser will initially navigate to. The URL should include the protocol, eg http:// */
@@ -67,6 +71,9 @@ public:
 	/** Whether to show standard controls like Back, Forward, Reload etc. */
 	UPROPERTY(EditAnywhere, meta = (DisplayName = "Show Controls", UIMin = 0, UIMax = 1), Category = "Web View|Show Head")
 		bool  controlShow = false;
+	/** When Download file Whether to show Tip Dialog. */
+	UPROPERTY(EditAnywhere, meta = (DisplayName = "Download Tip", UIMin = 0, UIMax = 1), Category = "Web View|Show Head")
+		bool  downloadTip = false;
 
 	UPROPERTY(EditAnywhere, meta = (DisplayName = "Web Pixel", UIMin = 64, UIMax = 8192), Category = "Web View|Screen")
 	FIntPoint _Pixel;
@@ -162,6 +169,7 @@ protected:
 	inline void HandleOnLoadState(const int state);
 	void HandleOnUrlChanged(const FText& Text);
 	bool HandleOnBeforePopup(FString URL, FString Frame);
+	void HandleOnDownloadTip(FString URL, FString File);
 
 
 };

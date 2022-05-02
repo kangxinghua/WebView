@@ -116,10 +116,12 @@ TSharedRef<SWidget> UWebBase::RebuildWidget() {
 		.ViewportSize(GetDesiredSize())
 		.Pixel(_Pixel)
 		.zoom(_Zoom)
+		.downloadTip(downloadTip)
 		.Visibility(EVisibility::SelfHitTestInvisible)
 		.OnUrlChanged_UObject(this, &UWebBase::HandleOnUrlChanged)
 		.OnBeforePopup_UObject(this, &UWebBase::HandleOnBeforePopup)
-		.OnLoadState_UObject(this, &UWebBase::HandleOnLoadState);
+		.OnLoadState_UObject(this, &UWebBase::HandleOnLoadState)
+		.OnDownloadComplete_UObject(this, &UWebBase::HandleOnDownloadTip);
 	_ViewObject = NewObject<UWebViewObject>();// 隔离JS和UE4之间的数据。
 	if (_ViewObject) {
 		BindUObject("interface", _ViewObject);
@@ -143,18 +145,25 @@ void UWebBase::HandleOnLoadState(const int state) {
 
 bool UWebBase::HandleOnBeforePopup(FString URL, FString Frame) {
 	if (!OnBeforePopup.IsBound()) return false;
-	if (IsInGameThread()) {
-		OnBeforePopup.Broadcast(URL, Frame);
-		return true;
-	}
-	// Retry on the GameThread.
-	TWeakObjectPtr<UWebBase> WeakThis = this;
-	AsyncTask(ENamedThreads::GameThread, [WeakThis, URL, Frame]() {
-		if (!WeakThis.IsValid()) return;
-		WeakThis->HandleOnBeforePopup(URL, Frame);
-		});
+	OnBeforePopup.Broadcast(URL, Frame);
 	return true;
+	//if (IsInGameThread()) {
+	//	OnBeforePopup.Broadcast(URL, Frame);
+	//	return true;
+	//}
+	//// Retry on the GameThread.
+	//TWeakObjectPtr<UWebBase> WeakThis = this;
+	//AsyncTask(ENamedThreads::GameThread, [WeakThis, URL, Frame]() {
+	//	if (!WeakThis.IsValid()) return;
+	//	WeakThis->HandleOnBeforePopup(URL, Frame);
+	//	});
+	//return true;
 
+}
+
+void UWebBase::HandleOnDownloadTip(FString URL, FString File) {
+	if (!OnDownloadComplete.IsBound()) return;
+	OnDownloadComplete.Broadcast(URL, File);
 }
 
 #if WITH_EDITOR

@@ -22,6 +22,7 @@ public:
 	DECLARE_DELEGATE_RetVal_OneParam(bool, FOnKeyChar, const FCharacterEvent& );
 	DECLARE_DELEGATE_OneParam(FOnLoadState, const int);
 	DECLARE_DELEGATE_RetVal_TwoParams(bool, FOnBeforePopup, FString, FString);
+	DECLARE_DELEGATE_TwoParams(FOnDownloadComplete, FString, FString);
 
 	SLATE_BEGIN_ARGS(SCefBrowser)
 		: _ViewportSize(FVector2D::ZeroVector)
@@ -43,6 +44,8 @@ public:
 		SLATE_EVENT(FOnLoadState, OnLoadState)
 		/** Called when the Url changes. */
 		SLATE_EVENT(FOnTextChanged, OnUrlChanged)
+		/** Called when file download finish. */
+		SLATE_EVENT(FOnDownloadComplete, OnDownloadComplete)
 
 		/* this party for params */
 		/** Control and Editor show text style  */
@@ -69,6 +72,8 @@ public:
 		SLATE_ARGUMENT(FIntPoint, Pixel)
 		/** zoom level*/
 		SLATE_ARGUMENT(float, zoom)
+		/** download show tip */
+		SLATE_ARGUMENT(bool, downloadTip)
 		//SLATE_ARGUMENT(float, zoomlevel)
 	SLATE_END_ARGS()
 
