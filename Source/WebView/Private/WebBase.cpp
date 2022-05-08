@@ -102,7 +102,29 @@ void UWebBase::ReleaseSlateResources(bool bReleaseChildren) {
 	CefCoreWidget.Reset();
 }
 
+void UWebBase::PostLoad() {
+	Super::PostLoad();
+	//SetFlags(RF_Transactional);
+}
+#if WITH_ACCESSIBILITY
+TSharedPtr<SWidget> UWebBase::GetAccessibleWidget() const
+{
+	return CefCoreWidget;
+}
+#endif
+
 TSharedRef<SWidget> UWebBase::RebuildWidget() {
+	//FString name;
+	//GetName(name);
+	if ( IsDesignTime() ) {
+		return SNew(SBox)
+			.HAlign(HAlign_Center)
+			.VAlign(VAlign_Center)
+			[
+				SNew(STextBlock)
+				.Text(LOCTEXT("WevView", "WevView"))
+			];
+	}
 	CefCoreWidget = SNew(SCefBrowser)
 		.ShowAddressBar(addressShow)
 		.InitialURL(urlInitial)

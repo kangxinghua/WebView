@@ -154,11 +154,14 @@ public:
 public:
 
 	virtual void ReleaseSlateResources(bool bReleaseChildren) override;
+	virtual void PostLoad() override;
 
 #if WITH_EDITOR
 	virtual const FText GetPaletteCategory() override;
 #endif
-
+#if WITH_ACCESSIBILITY
+	virtual TSharedPtr<SWidget> GetAccessibleWidget() const override;
+#endif
 	FString JSWindow();
 
 protected:
