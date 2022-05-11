@@ -73,7 +73,7 @@ public:
 		bool  controlShow = false;
 	/** When Download file Whether to show Tip Dialog. */
 	UPROPERTY(EditAnywhere, meta = (DisplayName = "Download Tip", UIMin = 0, UIMax = 1), Category = "Web View|Show Head")
-		bool  downloadTip = false;
+		bool  downloadTip = true;
 
 	UPROPERTY(EditAnywhere, meta = (DisplayName = "Web Pixel", UIMin = 64, UIMax = 8192), Category = "Web View|Screen")
 	FIntPoint _Pixel;

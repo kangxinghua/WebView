@@ -36,7 +36,7 @@ public class CefBrowser : ModuleRules
 				"Serialization",
 				"MediaUtils",
 				"cefForUe",
-				"HTTP",
+				"HTTP"
 			}
 		);
 		PrivateIncludePaths.AddRange(
