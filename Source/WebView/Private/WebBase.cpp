@@ -32,9 +32,9 @@ UWebBase::UWebBase(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 	, styleText(FTextBlockStyle::GetDefault())
 	, ColorBackground(255, 255, 255, 255)
-	, jsWindow(TEXT("ue"))
-	, _Pixel(128,64)
+	, _Pixel(128, 64)
 	, _Zoom(9.5f)
+	, jsWindow(TEXT("ue"))
 {
 	bIsVariable = true;
 	Visibility = ESlateVisibility::SelfHitTestInvisible;
