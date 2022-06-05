@@ -12,14 +12,14 @@ public class cefForUe : ModuleRules
     public cefForUe(ReadOnlyTargetRules Target) : base(Target)
     {
         Type = ModuleType.External;
-        Console.WriteLine(Target.bBuildEditor ? "editor":"runtime");
+        //Console.WriteLine(Target.bBuildEditor ? "editor":"runtime");
         if (Target.Platform == UnrealTargetPlatform.Win64)
         {
-            InitCEF3("cef_94.4638", "win64", "cefhelper.exe", ".dll", !Target.bBuildEditor);
+            InitCEF3("cef_95.4638", "win64", "cefhelper.exe", ".dll", !Target.bBuildEditor);
         }
         else if (Target.Platform == UnrealTargetPlatform.Linux)
         {
-            InitCEF3("cef_94.4638", "linux", "cefhelper", ".so", !Target.bBuildEditor);
+            InitCEF3("cef_95.4638", "linux", "cefhelper", ".so", !Target.bBuildEditor);
         }
         else
         {
