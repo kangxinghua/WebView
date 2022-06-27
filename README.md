@@ -32,6 +32,6 @@ https://www.zhihu.com/column/c_1490114276946223104
 # Important/Additional Notes:
 We are committed to providing the most efficient browser plug-in. If you have any questions in the process of using, you can contact us through the following ways.
 
-QQ: 249838628  
+QQ Group: 866972317   QQ: 249838628 
 Wechat: aSurgingRiver  
 Email: aSurgingRiver@163.com    aSurgingRiver@gmail.com
