@@ -17,7 +17,7 @@ public class CefBrowser : ModuleRules
 			PrivateIncludePaths.Add(privatep);
 			PublicDefinitions.Add("CRYPTOPP_ENABLE_NAMESPACE_WEAK=1"); //
 		}
-			
+		
 		PublicIncludePaths.AddRange(
 			new string[] {
 				// ... add public include paths required here ...

@@ -10,7 +10,6 @@
 #include "Async/TaskGraphInterfaces.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Misc/ConfigCacheIni.h"
-
 #if WITH_EDITOR
 #include "Materials/MaterialInterface.h"
 #include "Materials/MaterialExpressionMaterialFunctionCall.h"
@@ -98,8 +97,8 @@ void UWebBase::UnbindUObject(const FString& Name, UObject* Object, bool bIsPerma
 }
 
 void UWebBase::ReleaseSlateResources(bool bReleaseChildren) {
-	Super::ReleaseSlateResources(bReleaseChildren);
 	CefCoreWidget.Reset();
+	Super::ReleaseSlateResources(bReleaseChildren);
 }
 
 void UWebBase::PostLoad() {
@@ -116,13 +115,13 @@ TSharedPtr<SWidget> UWebBase::GetAccessibleWidget() const
 TSharedRef<SWidget> UWebBase::RebuildWidget() {
 	//FString name;
 	//GetName(name);
-	if ( IsDesignTime() ) {
+	if ( IsDesignTime() || IsDefaultSubobject()) {
 		return SNew(SBox)
 			.HAlign(HAlign_Center)
 			.VAlign(VAlign_Center)
 			[
 				SNew(STextBlock)
-				.Text(LOCTEXT("WevView", "WevView"))
+				.Text(LOCTEXT("WebView", "WebView"))
 			];
 	}
 	CefCoreWidget = SNew(SCefBrowser)
